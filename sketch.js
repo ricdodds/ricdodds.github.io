@@ -1,177 +1,124 @@
-var boids = [];
+// All the paths
+var paths = [];
+// Are we painting?
+var painting = false;
+// How long until the next circle
+var next = 0;
+// Where are we now and where were we?
+var current;
+var previous;
 
 function setup() {
   createCanvas(720, 400);
-
-  // Add an initial set of boids into the system
-  for (var i = 0; i < 100; i++) {
-    boids[i] = new Boid(random(width), random(height));
-  }
-}
+  current = createVector(0,0);
+  previous = createVector(0,0);
+};
 
 function draw() {
-  background(51);
-  // Run all the boids
-  for (var i = 0; i < boids.length; i++) {
-    boids[i].run(boids);
+  background(200);
+  
+  // If it's time for a new point
+  if (millis() > next && painting) {
+
+    // Grab mouse position      
+    current.x = mouseX;
+    current.y = mouseY;
+
+    // New particle's force is based on mouse movement
+    var force = p5.Vector.sub(current, previous);
+    force.mult(0.05);
+
+    // Add new particle
+    paths[paths.length - 1].add(current, force);
+    
+    // Schedule next circle
+    next = millis() + random(100);
+
+    // Store mouse values
+    previous.x = current.x;
+    previous.y = current.y;
+  }
+
+  // Draw all paths
+  for( var i = 0; i < paths.length; i++) {
+    paths[i].update();
+    paths[i].display();
   }
 }
 
-
-// Boid class
-// Methods for Separation, Cohesion, Alignment added
-function Boid(x, y) {
-  this.acceleration = createVector(0, 0);
-  this.velocity = p5.Vector.random2D();
-  this.position = createVector(x, y);
-  this.r = 3.0;
-  this.maxspeed = 3;    // Maximum speed
-  this.maxforce = 0.05; // Maximum steering force
+// Start it up
+function mousePressed() {
+  next = 0;
+  painting = true;
+  previous.x = mouseX;
+  previous.y = mouseY;
+  paths.push(new Path());
 }
 
-Boid.prototype.run = function(boids) {
-  this.flock(boids);
-  this.update();
-  this.borders();
-  this.render();
+// Stop
+function mouseReleased() {
+  painting = false;
 }
 
-// Forces go into acceleration
-Boid.prototype.applyForce = function(force) {
-  this.acceleration.add(force);
+// A Path is a list of particles
+function Path() {
+  this.particles = [];
+  this.hue = random(100);
 }
 
-// We accumulate a new acceleration each time based on three rules
-Boid.prototype.flock = function(boids) {
-  var sep = this.separate(boids); // Separation
-  var ali = this.align(boids);    // Alignment
-  var coh = this.cohesion(boids); // Cohesion
-  // Arbitrarily weight these forces
-  sep.mult(2.5);
-  ali.mult(1.0);
-  coh.mult(1.0);
-  // Add the force vectors to acceleration
-  this.applyForce(sep);
-  this.applyForce(ali);
-  this.applyForce(coh);
+Path.prototype.add = function(position, force) {
+  // Add a new particle with a position, force, and hue
+  this.particles.push(new Particle(position, force, this.hue));
 }
 
-// Method to update location
-Boid.prototype.update = function() {
-  // Update velocity
-  this.velocity.add(this.acceleration);
-  // Limit speed
-  this.velocity.limit(this.maxspeed);
+// Display plath
+Path.prototype.update = function() {  
+  for (var i = 0; i < this.particles.length; i++) {
+    this.particles[i].update();
+  }
+}  
+
+// Display plath
+Path.prototype.display = function() {
+  
+  // Loop through backwards
+  for (var i = this.particles.length - 1; i >= 0; i--) {
+    // If we shold remove it
+    if (this.particles[i].lifespan <= 0) {
+      this.particles.splice(i, 1);
+    // Otherwise, display it
+    } else {
+      this.particles[i].display(this.particles[i+1]);
+    }
+  }
+
+}  
+
+// Particles along the path
+function Particle(position, force, hue) {
+  this.position = createVector(position.x, position.y);
+  this.velocity = createVector(force.x, force.y);
+  this.drag = 0.95;
+  this.lifespan = 255;
+}
+
+Particle.prototype.update = function() {
+  // Move it
   this.position.add(this.velocity);
-  // Reset accelertion to 0 each cycle
-  this.acceleration.mult(0);
+  // Slow it down
+  this.velocity.mult(this.drag);
+  // Fade it out
+  this.lifespan--;
 }
 
-// A method that calculates and applies a steering force towards a target
-// STEER = DESIRED MINUS VELOCITY
-Boid.prototype.seek = function(target) {
-  var desired = p5.Vector.sub(target, this.position); // A vector pointing from the location to the target
-  // Normalize desired and scale to maximum speed
-  desired.normalize();
-  desired.mult(this.maxspeed);
-  // Steering = Desired minus Velocity
-  var steer = p5.Vector.sub(desired, this.velocity);
-  steer.limit(this.maxforce); // Limit to maximum steering force
-  return steer;
-}
-
-// Draw boid as a circle
-Boid.prototype.render = function() {
-  fill(127, 127);
-  stroke(200);
-  ellipse(this.position.x, this.position.y, 16, 16);
-}
-
-// Wraparound
-Boid.prototype.borders = function() {
-  if (this.position.x < -this.r) this.position.x = width + this.r;
-  if (this.position.y < -this.r) this.position.y = height + this.r;
-  if (this.position.x > width + this.r) location.x = -this.r;
-  if (this.position.y > height + this.r) location.y = -this.r;
-}
-
-// Separation
-// Method checks for nearby boids and steers away
-Boid.prototype.separate = function(boids) {
-  var desiredseparation = 25.0;
-  var steer = createVector(0, 0);
-  var count = 0;
-  // For every boid in the system, check if it's too close
-  for (var i = 0; i < boids.length; i++) {
-    var d = p5.Vector.dist(this.position, boids[i].position);
-    // If the distance is greater than 0 and less than an arbitrary amount (0 when you are yourself)
-    if ((d > 0) && (d < desiredseparation)) {
-      // Calculate vector pointing away from neighbor
-      var diff = p5.Vector.sub(this.position, boids[i].position);
-      diff.normalize();
-      diff.div(d); // Weight by distance
-      steer.add(diff);
-      count++; // Keep track of how many
-    }
-  }
-  // Average -- divide by how many
-  if (count > 0) {
-    steer.div(count);
-  }
-
-  // As long as the vector is greater than 0
-  if (steer.mag() > 0) {
-    // Implement Reynolds: Steering = Desired - Velocity
-    steer.normalize();
-    steer.mult(this.maxspeed);
-    steer.sub(this.velocity);
-    steer.limit(this.maxforce);
-  }
-  return steer;
-}
-
-// Alignment
-// For every nearby boid in the system, calculate the average velocity
-Boid.prototype.align = function(boids) {
-  var neighbordist = 50;
-  var sum = createVector(0, 0);
-  var count = 0;
-  for (var i = 0; i < boids.length; i++) {
-    var d = p5.Vector.dist(this.position, boids[i].position);
-    if ((d > 0) && (d < neighbordist)) {
-      sum.add(boids[i].velocity);
-      count++;
-    }
-  }
-  if (count > 0) {
-    sum.div(count);
-    sum.normalize();
-    sum.mult(this.maxspeed);
-    var steer = p5.Vector.sub(sum, this.velocity);
-    steer.limit(this.maxforce);
-    return steer;
-  } else {
-    return createVector(0, 0);
-  }
-}
-
-// Cohesion
-// For the average location (i.e. center) of all nearby boids, calculate steering vector towards that location
-Boid.prototype.cohesion = function(boids) {
-  var neighbordist = 50;
-  var sum = createVector(0, 0); // Start with empty vector to accumulate all locations
-  var count = 0;
-  for (var i = 0; i < boids.length; i++) {
-    var d = p5.Vector.dist(this.position, boids[i].position);
-    if ((d > 0) && (d < neighbordist)) {
-      sum.add(boids[i].position); // Add location
-      count++;
-    }
-  }
-  if (count > 0) {
-    sum.div(count);
-    return this.seek(sum); // Steer towards the location
-  } else {
-    return createVector(0, 0);
+// Draw particle and connect it with a line
+// Draw a line to another
+Particle.prototype.display = function(other) {
+  stroke(0, this.lifespan);
+  fill(0, this.lifespan/2);    
+  ellipse(this.position.x,this.position.y, 8, 8);    
+  // If we need to draw a line
+  if (other) {
+    line(this.position.x, this.position.y, other.position.x, other.position.y);
   }
 }
