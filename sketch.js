@@ -174,3 +174,4 @@ Boid.prototype.cohesion = function(boids) {
   } else {
     return createVector(0, 0);
   }
+}
