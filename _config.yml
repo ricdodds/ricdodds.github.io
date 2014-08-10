@@ -3,6 +3,7 @@
 title:            Ricardo Dodds
 locale:           en_US
 url:              http://ricdodds.github.io
+#url:              http://localhost:4000
 
 
 # Jekyll configuration
