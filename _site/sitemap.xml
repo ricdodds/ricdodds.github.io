@@ -46,39 +46,33 @@
   
   
   <url>
-    <loc>http://ricdodds.github.io/about/</loc>
-    <lastmod>2014-08-10T00:04:35-04:00</lastmod>
+    <loc>http://ricdodds.github.io/</loc>
+    <lastmod>2014-08-10T00:41:32-04:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://ricdodds.github.io/theme-setup/</loc>
-    <lastmod>2014-08-10T00:04:35-04:00</lastmod>
+    <lastmod>2014-08-10T00:41:32-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://ricdodds.github.io/posts/</loc>
-    <lastmod>2014-08-10T00:04:35-04:00</lastmod>
+    <lastmod>2014-08-10T00:41:32-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://ricdodds.github.io/</loc>
-    <lastmod>2014-08-10T00:04:35-04:00</lastmod>
+    <loc>http://ricdodds.github.io/about/</loc>
+    <lastmod>2014-08-10T00:41:32-04:00</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.7</priority>
   </url>
   
-  
-  <url>
-    <loc>http://ricdodds.github.io/p5/index.html</loc>
-    <lastmod>2014-08-09T21:13:18Z</lastmod>
-    <priority>0.6</priority>
-  </url>
   
   <url>
     <loc>http://ricdodds.github.io/parallax/404.html</loc>
@@ -100,7 +94,7 @@
   
   <url>
     <loc>http://ricdodds.github.io/simple-parallax-scrolling-tutorial-f/index.html</loc>
-    <lastmod>2014-08-09T23:36:20Z</lastmod>
+    <lastmod>2014-08-10T00:34:25Z</lastmod>
     <priority>0.6</priority>
   </url>
   
