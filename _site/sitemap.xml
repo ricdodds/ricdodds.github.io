@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+  <url>
+    <loc>http://localhost:4000/author-override/</loc>
+    <lastmod>2014-07-31T00:00:00-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4000/code-highlighting-post/</loc>
+    <lastmod>2013-08-16T00:00:00-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4000/sample-link-post/</loc>
+    <lastmod>2013-08-12T00:00:00-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4000/readability-feature-post/</loc>
+    <lastmod>2013-05-23T00:00:00-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4000/sample-post-images/</loc>
+    <lastmod>2013-05-22T00:00:00-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4000/readability-post/</loc>
+    <lastmod>2012-05-22T00:00:00-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4000/sample-post/</loc>
+    <lastmod>2011-03-10T00:00:00-03:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  
+  <url>
+    <loc>http://localhost:4000/about/</loc>
+    <lastmod>2014-08-09T23:53:21-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4000/theme-setup/</loc>
+    <lastmod>2014-08-09T23:53:21-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4000/posts/</loc>
+    <lastmod>2014-08-09T23:53:21-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4000/</loc>
+    <lastmod>2014-08-09T23:53:21-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  
+  <url>
+    <loc>http://localhost:4000/p5/index.html</loc>
+    <lastmod>2014-08-09T21:13:18Z</lastmod>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4000/parallax/404.html</loc>
+    <lastmod>2013-09-25T08:27:59Z</lastmod>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4000/parallax/index.html</loc>
+    <lastmod>2014-08-09T23:53:17Z</lastmod>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4000/simple-parallax-scrolling-tutorial-f/404.html</loc>
+    <lastmod>2013-09-25T08:27:59Z</lastmod>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:4000/simple-parallax-scrolling-tutorial-f/index.html</loc>
+    <lastmod>2014-08-09T23:36:20Z</lastmod>
+    <priority>0.6</priority>
+  </url>
+  
+</urlset>

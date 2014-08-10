@@ -1,0 +1,19 @@
+# Site navigation links
+
+# - title: About
+#   url: /about/
+
+# - title: Sample Posts
+#   url: /posts/
+
+# - title: Theme Setup
+#   url: /theme-setup/
+
+- title: Processing
+  url: /p5/
+
+- title: Parallax 1
+  url: /parallax/
+
+- title: Parallax 2
+  url: /simple-parallax-scrolling-tutorial-f/
