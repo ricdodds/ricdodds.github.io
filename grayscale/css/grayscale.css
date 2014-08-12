@@ -62,7 +62,7 @@ a:focus {
 }
 
 .navbar-custom {
-    top: 200px;
+    top: 100px;
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
@@ -70,7 +70,7 @@ a:focus {
     background-color: #000;
 }
 
-ul.navbar-nav.affix{
+.navbar-custom.affix{
     top: 30px; /* Set the top position of pinned element */
 }
 

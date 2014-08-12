@@ -34,7 +34,7 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-custom" role="navigation">
+	<nav class="navbar navbar-custom" role="navigation" id="myNav">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
@@ -47,7 +47,7 @@
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-				<ul class="nav navbar-nav" id="myNav">
+				<ul class="nav navbar-nav">
 					<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
 					<li class="hidden">
 						<a href="#page-top"></a>
@@ -196,9 +196,6 @@
 	        offset: { 
 	            top: 125 
 	     	}
-	    });
-	    $("#myNav").on('affixed.bs.affix', function(){
-	        alert("The left navigation menu has been affixed. Now it doesn't scroll with the page.");
 	    });
 	});
 	</script>
