@@ -70,7 +70,7 @@ a:focus {
 }
 
 #affixed-navbar.affix {
-
+	top: 0px;
 }
 
 .navbar-custom .navbar-brand {
