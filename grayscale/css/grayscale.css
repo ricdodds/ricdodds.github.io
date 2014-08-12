@@ -70,7 +70,7 @@ a:focus {
     background-color: #000;
 }
 
-.navbar.affix{
+ul.navbar-nav.affix{
     top: 30px; /* Set the top position of pinned element */
 }
 
