@@ -29,19 +29,6 @@
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-	<script type="text/javascript">
-	$(document).ready(function(){
-	    $("#myNav").affix({
-	        offset: { 
-	            top: 125 
-	     	}
-	    });
-	    $("#myNav").on('affixed.bs.affix', function(){
-	        alert("The left navigation menu has been affixed. Now it doesn't scroll with the page.");
-	    });
-	});
-	</script>
-
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -202,6 +189,19 @@
 
 	<!-- Custom Theme JavaScript -->
 	<script src="js/grayscale.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+	    $("#myNav").affix({
+	        offset: { 
+	            top: 125 
+	     	}
+	    });
+	    $("#myNav").on('affixed.bs.affix', function(){
+	        alert("The left navigation menu has been affixed. Now it doesn't scroll with the page.");
+	    });
+	});
+	</script>
 
 </body>
 
