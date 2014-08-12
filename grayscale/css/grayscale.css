@@ -70,6 +70,10 @@ a:focus {
     background-color: #000;
 }
 
+.navbar-custom.affix{
+    top: 30px; /* Set the top position of pinned element */
+}
+
 .navbar-custom .navbar-brand {
     font-weight: 700;
 }
