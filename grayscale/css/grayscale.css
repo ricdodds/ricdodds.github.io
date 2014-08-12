@@ -73,6 +73,7 @@ a:focus {
 .navbar.affix{
     top: 50px;
     text-align: center;
+    position: center;
 }
 
 .navbar-custom .navbar-brand {
