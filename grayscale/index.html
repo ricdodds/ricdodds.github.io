@@ -185,7 +185,7 @@
 	$(document).ready(function(){
 	    $("#affixed-navbar").affix({
 	        	offset: { 
-					top: $( "#affixed-navbar" ).offset().top
+					top: $("#affixed-navbar").offset().top - $("#affixed-navbar").height()
 	     	}
 	    });
 	});
