@@ -29,12 +29,25 @@
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
+	<script type="text/javascript">
+	$(document).ready(function(){
+	    $("#myNav").affix({
+	        offset: { 
+	            top: 125 
+	     	}
+	    });
+	    $("#myNav").on('affixed.bs.affix', function(){
+	        alert("The left navigation menu has been affixed. Now it doesn't scroll with the page.");
+	    });
+	});
+	</script>
+
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-custom" role="navigation">
+	<nav class="navbar navbar-custom" id="myNav" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
