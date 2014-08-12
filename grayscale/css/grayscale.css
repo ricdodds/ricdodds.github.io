@@ -75,6 +75,15 @@ a:focus {
     top: 50px;
     text-align: center;
     position: center!important;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container.affix-top {
+    text-align: center;
+    position: center!important;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .navbar-custom .navbar-brand {
