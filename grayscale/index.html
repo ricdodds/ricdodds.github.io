@@ -98,7 +98,7 @@
 	</section>
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-custom" role="navigation">
+	<nav class="navbar navbar-custom" role="navigation" id="affixed-navbar">
 		<div class="container">
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse navbar-left navbar-main-collapse">
@@ -183,9 +183,11 @@
 
 	<script type="text/javascript">
 	$(document).ready(function(){
-	    $("#myNav").affix({
+	    $("#affixed-navbar").affix({
 	        offset: { 
-	            top: 50 
+					top: function () {
+			        return (this.top = 20px)
+			      }
 	     	}
 	    });
 	});
