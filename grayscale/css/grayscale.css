@@ -68,12 +68,13 @@ a:focus {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     background-color: #000;
+    position: center;
 }
 
 .navbar.affix{
     top: 50px;
     text-align: center;
-    position: center;
+    position: center!important;
 }
 
 .navbar-custom .navbar-brand {
