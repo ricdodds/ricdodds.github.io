@@ -186,7 +186,7 @@
 	    $("#affixed-navbar").affix({
 	        	offset: { 
 					top: function () {
-			        return (this.top = 20px)
+			        return $( this ).offset().top
 			      }
 	     	}
 	    });
