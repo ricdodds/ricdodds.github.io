@@ -80,7 +80,7 @@ a:focus {
 
 .container.affix {
     text-align: center;
-    position: center;
+    position: relative;
     margin-right: auto;
     margin-left: auto;
 }
