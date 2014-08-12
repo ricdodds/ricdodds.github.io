@@ -79,7 +79,7 @@ a:focus {
 
 .container.affix {
     text-align: center;
-    position: relative;
+    left: 50%;
     margin-right: auto;
     margin-left: auto;
 }
