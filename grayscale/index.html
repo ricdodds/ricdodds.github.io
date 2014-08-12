@@ -31,12 +31,12 @@
 
 	<script type="text/javascript">
 	$(document).ready(function(){
-	    $("#myNav").affix({
+	    $("#navbar").affix({
 	        offset: { 
 	            top: 125 
 	     	}
 	    });
-	    $("#myNav").on('affixed.bs.affix', function(){
+	    $("#navbar").on('affixed.bs.affix', function(){
 	        alert("The left navigation menu has been affixed. Now it doesn't scroll with the page.");
 	    });
 	});
