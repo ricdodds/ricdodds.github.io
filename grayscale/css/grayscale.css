@@ -62,7 +62,7 @@ a:focus {
 }
 
 .navbar-custom {
-    top: 50px;
+    top: 100px;
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
@@ -71,7 +71,7 @@ a:focus {
 }
 
 .navbar-custom.affix{
-    top: 100px;
+    top: 50px;
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
