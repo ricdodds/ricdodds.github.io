@@ -1,0 +1,231 @@
+/*!
+ * Start Bootstrap - Logo Nav HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+@import url("bootstrap.min.css");
+@font-face {
+  font-family: 'WeblySleek';
+  src: url('../fonts/weblysleekuil.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+.is-stuck {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+}
+
+.navbar-custom-nav {
+  min-width: 550px;
+}
+
+.navbar-custom-nav > li {
+  display: inline;
+}
+
+.navbar-custom-nav > li > div {
+  display: inline-block;
+  text-align: center;
+}
+
+.navbar-custom-nav > li > div > a {
+  display: block;
+}
+
+.navbar-custom-nav > li > div > img {
+  display: block;
+}
+
+.navbar-custom-section {
+  padding: 5px;
+  padding-right: 25px;
+  padding-left: 25px;
+  text-align: center;
+}
+
+.navbar-custom-logo {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+}
+
+.navbar-custom {
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(255,255,255,.3);
+  text-transform: uppercase;
+  font-family: 'Arial Narrow';
+  background-color: #292929;
+}
+
+.navbar-custom a {
+  color: #fff;
+}
+
+.navbar-custom .nav li.active {
+  outline: nonte;
+  background-color: rgba(255,255,255,.3);
+}
+
+.navbar-custom .nav li div {
+  -webkit-transition: background .3s ease-in-out;
+  -moz-transition: background .3s ease-in-out;
+  transition: background .3s ease-in-out;
+}
+
+.navbar-custom .nav li div:hover,
+.navbar-custom .nav li div:focus,
+.navbar-custom .nav li div.active {
+  outline: 0;
+  background-color: rgba(255,255,255,.3);
+}
+
+.navbar-main {
+  margin-bottom: 0px;
+  background-color: #282828;
+}
+
+.navbar-nav {
+  font-family: 'Arial Narrow';
+}
+
+.navbar-brand {
+  height: auto;
+}
+
+.navbar-collapse {
+  padding-top: 30px;
+}
+
+.navbar-toggle {
+  margin-top: 31px;
+}
+
+body {
+  background-color: black;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.image-bg-fluid-height,
+.image-bg-fixed-height {
+  text-align: left;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.image-bg-fluid-height {
+  background: url(../images/DeepmineSunrise.png) no-repeat center center scroll;
+  padding: 50px 0;
+}
+
+.image-bg-fixed-height {
+  background: url(../images/DeepmineSunrise.png) no-repeat center center scroll;
+  height: 450px;
+}
+
+.first-section-3 {
+  background: url(../images/BMDepth1.png) bottom left no-repeat;
+}
+
+.first-section-2 {
+  background: url(../images/BMDepth2.png) bottom right no-repeat;
+  
+}
+
+.first-section-1 {
+  background: url(../images/BMDepth3.png) bottom center no-repeat;
+}
+
+.content-section {
+  padding: 60px 40px;
+}
+
+.dynamic-section {
+  background: url(../images/TreesBackgroundWhite.png) top center no-repeat;
+  background-color: white;
+}
+
+.image-bg-fixed-height .container {
+  height: 100%;
+
+}
+
+.headline {
+  height: 100%;
+  color: white;
+  text-align: left;
+  display: table;
+  font-family: 'WeblySleek';
+}
+
+.headline-container {
+  max-width: 550px;
+  min-width: 350px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.headline-container h1 {
+  font-size: 80px;  
+}
+
+.headline h2 {
+  font-size: 77px;
+}
+
+.standard-content {
+}
+
+
+
+
+.left-aligned-content p {
+  color: #666666;
+  font-family: 'WeblySleek';
+  font-size: 18px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.left-aligned-content h2 {
+    color: gray;
+    font-family: 'WeblySleek';
+    text-align: left;
+    font-size: 50px;
+    margin: 5px 0px;
+  }
+
+
+  .standard-content h2 {
+    color: #D3D3D3;
+    font-family: 'WeblySleek';
+    text-align: center;
+    font-size: 50px;
+    margin: 5px 0px;
+  }
+
+  .standard-content p {
+    color: #EEEEEE;
+    font-family: 'WeblySleek';
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+    
+  }
+
+.carousel-indicators {
+  bottom: -10px;
+}
+
+.carousel-inner {
+  margin-bottom: 10px;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}

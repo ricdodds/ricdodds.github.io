@@ -1,0 +1,26 @@
+body {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.fixed-top, .fixed-bottom {
+  position: fixed;
+}
+
+.fixed-top, .fixed-bottom {
+  font-size: 3rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.fixed-top {
+  top: 0;
+  background-color: pink;
+}
+
+.fixed-bottom {
+  bottom: 0;
+  background-color: green;
+  -webkit-backface-visibility: hidden;
+}
