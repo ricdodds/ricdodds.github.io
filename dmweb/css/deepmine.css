@@ -7,7 +7,7 @@
 @import url("bootstrap.min.css");
 @font-face {
   font-family: 'WeblySleek';
-  src: url('../fonts/weblysleekuil.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  src: url('../fonts/weblysleekuil.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3â€”5 */
 }
 
 .is-stuck {
