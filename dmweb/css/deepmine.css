@@ -12,13 +12,25 @@
 
 .is-stuck {
   position: fixed;
-  top: 0px;
   width: 100%;
   -webkit-backface-visibility: hidden;
 }
 
+.navbar-custom-header {
+  font-family: 'WeblySleek';
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  text-transform: none;
+  margin: 0px;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  min-width: 660px;
+}
+
 .navbar-custom-nav {
-  min-width: 550px;
+  text-align: center;
+  min-width: 620px;
 }
 
 .navbar-custom-nav > li {
@@ -57,6 +69,7 @@
   text-transform: uppercase;
   font-family: 'Arial Narrow';
   background-color: #292929;
+  z-index: 100;
 }
 
 .navbar-custom a {
@@ -64,7 +77,7 @@
 }
 
 .navbar-custom .nav li.active {
-  outline: nonte;
+  outline: none;
   background-color: rgba(255,255,255,.3);
 }
 
@@ -81,13 +94,18 @@
   background-color: rgba(255,255,255,.3);
 }
 
+.is-active {
+  outline: 0;
+  background-color: rgba(255,255,255,.3);
+}
+
 .navbar-main {
   margin-bottom: 0px;
   background-color: #282828;
 }
 
 .navbar-nav {
-  font-family: 'Arial Narrow';
+  font-family: 'WeblySleek';
 }
 
 .navbar-brand {
@@ -110,13 +128,7 @@ body {
 }
 
 .image-bg-fluid-height,
-.image-bg-fixed-height {
-  text-align: left;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-}
+
 
 .image-bg-fluid-height {
   background: url(../images/DeepmineSunrise.png) no-repeat center center scroll;
@@ -126,19 +138,25 @@ body {
 .image-bg-fixed-height {
   background: url(../images/DeepmineSunrise.png) no-repeat center center scroll;
   height: 450px;
+  background-size: cover;
+  width: 100%;
 }
 
 .first-section-3 {
   background: url(../images/BMDepth1.png) bottom left no-repeat;
-}
-
-.first-section-2 {
-  background: url(../images/BMDepth2.png) bottom right no-repeat;
+  background-size: cover;
   
 }
 
+.first-section-2 {
+  background: url(../images/BMDepth2Small.png) bottom right no-repeat fixed;
+  background-size: cover;
+}
+
 .first-section-1 {
-  background: url(../images/BMDepth3.png) bottom center no-repeat;
+  background: url(../images/BMDepth3.gif) bottom center no-repeat fixed;
+  background-size: cover;
+  background-position-y: 300px;
 }
 
 .content-section {

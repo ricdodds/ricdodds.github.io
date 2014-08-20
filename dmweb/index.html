@@ -86,7 +86,7 @@
   </nav>
 
   <!-- Page Content -->
-  <header class="image-bg-fixed-height" data-0="background-position-y: -50px" data-500="background-position-y: 0px;">
+  <header class="image-bg-fixed-height" data-0="background-position: 0px 0x" data-500="background-position: 0px 125px;">
     <!--<img class="img-responsive img-center" src="images/DeepmineSunrise.png" alt="">-->
     <div class="container">
       <div class="headline">
@@ -97,8 +97,10 @@
       </div>
     </div>
   </header>
-  <div id="first-section-layer1" class="first-section-1" data-0="background-position-y:-150px" data-1500="background-position-y:500px">
-    <div id="first-section-layer2" class="first-section-2" data-0="background-position-y:-100px" data-1500="background-position-y:200px">
+
+  <!--Carousel-->
+  <div id="first-section-layer1" class="first-section-1" data-0="background-position-y:500px" data-1500="background-position-y:0px">
+    <div id="first-section-layer2" class="first-section-2" data-0="background-position-y:300px" data-1500="background-position-y:-500px">
       <div id="first-section-layer3" class="first-section-3">
         <div class="content-section">
           <div class="container">
@@ -159,36 +161,37 @@
     </div>
   </div>
 
-  <!-- Navigation -->
+  <!-- Affixed Navigation -->
   <nav class="navbar navbar-custom" role="navigation" id="affixed-navbar">
     <div class="container">
-      <ul class="nav navbar-custom-nav">
+      <h2 class="navbar-custom-header" id="navbar-custom-header">Deepmine is the only tool that's truly:</h2>
+      <ul class="nav navbar-custom-nav" id="inner-affixed-navbar">
         <li>
-          <div class="navbar-custom-section">
+          <div class="dynamic-section-icon navbar-custom-section">
             <img class="navbar-custom-logo" src="images/DeepmineSections/dynamic.png" alt="">
             <a class="page-scroll" href="#dynamic-section">DYNAMIC</a>
           </div>
         </li>
         <li>
-          <div class="navbar-custom-section">
+          <div class="holistic-section-icon navbar-custom-section">
             <img class="navbar-custom-logo" src="images/DeepmineSections/holistic.png" alt="">
             <a class="page-scroll" href="#holistic-section">HOLISTIC</a>
           </div>
         </li>
         <li>
-          <div class="navbar-custom-section">
+          <div class="pragmatic-section-icon navbar-custom-section">
             <img class="navbar-custom-logo" src="images/DeepmineSections/pragmatic.png" alt="">
             <a class="page-scroll" href="#pragmatic-section">PRAGMATIC</a>
           </div>
         </li>
         <li>
-          <div class="navbar-custom-section">
+          <div class="insightful-section-icon navbar-custom-section">
             <img class="navbar-custom-logo" src="images/DeepmineSections/insightful.png" alt="">
             <a class="page-scroll" href="#insightful-section">INSIGHTFUL</a>
           </div>
         </li>
         <li>
-          <div class="navbar-custom-section">
+          <div class="stochastic-section-icon navbar-custom-section">
             <img class="navbar-custom-logo" src="images/DeepmineSections/stochastic.png" alt="">
             <a class="page-scroll" href="#stochastic-section">STOCHASTIC</a>
           </div>
@@ -198,24 +201,26 @@
     <!-- /.container -->
   </nav>
 
-
+  <!--Dynamic section-->
   <div class="dynamic-section" id="dynamic-section" data-top="background-position-y:0px" data-bottom="background-position-y:-200px">
     <div class="content-section">
       <div class="container">
-
-        <div class="left-aligned-content">
-          <h2>Dynamic Programming</h2>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting. emaining essential.
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting. emaining essential
-          </p>
+        <div class="row">
+          <div class="col-md-5">
+            <div class="left-aligned-content">
+              <h2>Dynamic Programming</h2>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting. emaining essential.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting. emaining essential
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-
-
+  <!--Holistic section-->
   <div class="holistic-section" id="holistic-section">
     <div class="container">
       <div class="standard-content">
@@ -228,7 +233,8 @@
     </div>
   </div>
 
-  <div class="first-section" id="pragmatic-section">
+  <!--Pragmatic section-->
+  <div class="pragmatic-section" id="pragmatic-section">
     <div class="container">
       <div class="standard-content">
         <h2>Phases</h2>
@@ -240,7 +246,8 @@
     </div>
   </div>
 
-  <div class="first-section" id="insightful-section">
+  <!--Insightful section-->
+  <div class="insightful-section" id="insightful-section">
     <div class="container">
       <div class="standard-content">
         <h2>Slick Vizs</h2>
@@ -252,7 +259,8 @@
     </div>
   </div>
 
-  <div class="first-section" id="stochastic-section">
+  <!--Stochastic section-->
+  <div class="stochastic-section" id="stochastic-section">
     <div class="container">
       <div class="standard-content">
         <h2>Stochastic Models</h2>
@@ -268,12 +276,12 @@
   <!-- <div class="fixed-bottom">Fixed Bottom</div> -->
   
   <script src="js/jquery-2.1.1.min.js"></script>
-  <script src="js/deepmine.js"></script>
-
   <script src="js/jquery.easing.min.js"></script>
 
   <script src="js/bootstrap.min.js"></script>
   <script src="js/skrollr.min.js"></script>
+  <script src="js/jquery.nicescroll.min.js"></script>
+  <script src="js/deepmine.js"></script>
 
 </body>
 
