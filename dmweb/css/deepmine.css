@@ -87,53 +87,44 @@
   -webkit-backface-visibility: hidden;
 }
 
-
-.phase-gif-01 {
-  height:300px;
-  width:auto;
-  background-image: url(../images/skate/sk01.png);
+.phase-gif {
+  height: 400px;
+  width: auto; 
+  background: no-repeat center center scroll;
+  background-size: cover;
+  background-position-y: -100px;
 }
 
-.phase-gif-02 {
-  height:300px;
-  width:auto;
-  background-image: url(../images/skate/sk02.png);
+.frame-01 {
+  background-image: url(../images/PhaseFrames/PhaseFrame1.png) ;
 }
 
-.phase-gif-03 {
-  height:300px;
-  width:auto;
-  background-image: url(../images/skate/sk03.png);
+.frame-02 {
+  background-image: url(../images/PhaseFrames/PhaseFrame2.png);
 }
 
-.phase-gif-04 {
-  height:300px;
-  width:auto;
-  background-image: url(../images/skate/sk04.png);
+.frame-03 {
+  background-image: url(../images/PhaseFrames/PhaseFrame3.png);
 }
 
-.phase-gif-05 {
-  height:300px;
-  width:auto;
-  background-image: url(../images/skate/sk05.png);
+.frame-04 {
+  background-image: url(../images/PhaseFrames/PhaseFrame4.png);
 }
 
-.phase-gif-06 {
-  height:300px;
-  width:auto;
-  background-image: url(../images/skate/sk06.png);
+.frame-05 {
+  background-image: url(../images/PhaseFrames/PhaseFrame5.png);
 }
 
-.phase-gif-07 {
-  height:300px;
-  width:auto;
-  background-image: url(../images/skate/sk07.png);
+.frame-06 {
+  background-image: url(../images/PhaseFrames/PhaseFrame6.png);
 }
 
-.phase-gif-08 {
-  height:300px;
-  width:auto;
-  background-image: url(../images/skate/sk08.png);
+.frame-07 {
+  background-image: url(../images/PhaseFrames/PhaseFrame7.png);
+}
+
+.frame-08 {
+  background-image: url(../images/PhaseFrames/PhaseFrame8.png);
 }
 
 .phase-gif-09 {
@@ -294,8 +285,17 @@ body {
 }
 
 .holistic-section {
-  background: url(../images/MineToBlocks.png) top center no-repeat fixed;
+  background: url(../images/MineToBlocksColor.png) top center no-repeat fixed;
   z-index: -2;
+  width: 100%;
+  background-size: cover;
+  background-position-y: 84px;
+}
+
+.pragmatic-section {
+  z-index: -2;
+  width: 100%;
+  background-color: #ededed;
 }
 
 .image-bg-fixed-height .container {
@@ -358,6 +358,22 @@ body {
 
 .standard-content p {
   color: #EEEEEE;
+  font-family: 'WeblySleek';
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.inverted-content h2 {
+  color: #222222;
+  font-family: 'WeblySleek';
+  text-align: center;
+  font-size: 50px;
+  margin: 5px 0px;
+}
+
+.inverted-content p {
+  color: #333333;
   font-family: 'WeblySleek';
   font-size: 18px;
   text-align: center;
