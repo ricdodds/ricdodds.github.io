@@ -5,15 +5,147 @@
  */
 
 @import url("bootstrap.min.css");
+
 @font-face {
   font-family: 'WeblySleek';
-  src: url('../fonts/weblysleekuil.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3â€”5 */
+  src: url('../fonts/weblysleekuil.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+.holistic-block {
+  color: #d3d3d3;
+  font-family: 'WeblySleek';
+  position: relative;
+  padding: 20px;
+  width: 220px;
+  height: 200px;
+  /*border-style: groove ridge ridge groove;*/
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  border-radius: 2px;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.holistic-block h2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.holistic-block p {
+  text-align: center;
+}
+
+.mine-plan {
+  padding: 80px 80px;
+  background-color: rgba(0, 0, 0, 1);
+  border-color: rgba(81, 110, 117, 1);
+  border-width: 5px;
+}
+
+.geo-model {
+  z-index: 10;
+  border-color: rgba(140, 170, 212, 1);
+  top: 80px;
+  right: -80px;
+  border-width: 5px;
+  text-align: right;
+}
+
+.mining-environment {
+  z-index: 10;
+  border-color: rgba(207, 170, 134, 1);
+  top: 80px;
+  right: 80px;
+  border-width: 5px;
+}
+
+.pit-collection {
+  border-color: rgba(179, 141, 160, 1); top: -80px; right: -80px;border-width:5px
+}
+
+.economic-environment {
+  border-color: rgba(154, 180, 143, 1); top: -80px; right: 80px;border-width:5px
+}
+
+.geo-model p { text-align: left}
+.pit-collection p { text-align: left}
+.mining-enviroment p {text-align: right}
+.economic-environment p {text-align: right}
+
+.modal-content {
+  width: 853px;
+  height: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  background-color: rgba(0,0,0,0.5);
 }
 
 .is-stuck {
   position: fixed;
   width: 100%;
   -webkit-backface-visibility: hidden;
+}
+
+
+.phase-gif-01 {
+  height:300px;
+  width:auto;
+  background-image: url(../images/skate/sk01.png);
+}
+
+.phase-gif-02 {
+  height:300px;
+  width:auto;
+  background-image: url(../images/skate/sk02.png);
+}
+
+.phase-gif-03 {
+  height:300px;
+  width:auto;
+  background-image: url(../images/skate/sk03.png);
+}
+
+.phase-gif-04 {
+  height:300px;
+  width:auto;
+  background-image: url(../images/skate/sk04.png);
+}
+
+.phase-gif-05 {
+  height:300px;
+  width:auto;
+  background-image: url(../images/skate/sk05.png);
+}
+
+.phase-gif-06 {
+  height:300px;
+  width:auto;
+  background-image: url(../images/skate/sk06.png);
+}
+
+.phase-gif-07 {
+  height:300px;
+  width:auto;
+  background-image: url(../images/skate/sk07.png);
+}
+
+.phase-gif-08 {
+  height:300px;
+  width:auto;
+  background-image: url(../images/skate/sk08.png);
+}
+
+.phase-gif-09 {
+  height:300px;
+  width:auto;
+  background-image: url(../images/skate/sk09.png);
+}
+
+.phase-gif-10 {
+  height:300px;
+  width:auto;
+  background-image: url(../images/skate/sk10.png);
 }
 
 .navbar-custom-header {
@@ -30,7 +162,7 @@
 
 .navbar-custom-nav {
   text-align: center;
-  min-width: 660px;
+  min-width: 620px;
 }
 
 .navbar-custom-nav > li {
@@ -112,12 +244,8 @@
   height: auto;
 }
 
-.navbar-collapse {
-  padding-top: 30px;
-}
-
 .navbar-toggle {
-  margin-top: 31px;
+  margin-top: 14px;
 }
 
 body {
@@ -128,8 +256,6 @@ body {
 }
 
 .image-bg-fluid-height,
-
-
 .image-bg-fluid-height {
   background: url(../images/DeepmineSunrise.png) no-repeat center center scroll;
   padding: 50px 0;
@@ -145,7 +271,6 @@ body {
 .first-section-3 {
   background: url(../images/BMDepth1.png) bottom left no-repeat;
   background-size: cover;
-  
 }
 
 .first-section-2 {
@@ -168,9 +293,13 @@ body {
   background-color: white;
 }
 
+.holistic-section {
+  background: url(../images/MineToBlocks.png) top center no-repeat fixed;
+  z-index: -2;
+}
+
 .image-bg-fixed-height .container {
   height: 100%;
-
 }
 
 .headline {
@@ -188,9 +317,9 @@ body {
   vertical-align: middle;
 }
 
-.headline-container h1 {
-  font-size: 80px;  
-}
+  .headline-container h1 {
+    font-size: 80px;
+  }
 
 .headline h2 {
   font-size: 77px;
@@ -203,7 +332,7 @@ body {
 
 
 .left-aligned-content p {
-  color: #666666;
+  color: #222222;
   font-family: 'WeblySleek';
   font-size: 18px;
   text-align: left;
@@ -211,30 +340,29 @@ body {
 }
 
 .left-aligned-content h2 {
-    color: gray;
-    font-family: 'WeblySleek';
-    text-align: left;
-    font-size: 50px;
-    margin: 5px 0px;
-  }
+  color: #333333;
+  font-family: 'WeblySleek';
+  text-align: center;
+  font-size: 50px;
+  margin: 5px 0px;
+}
 
 
-  .standard-content h2 {
-    color: #D3D3D3;
-    font-family: 'WeblySleek';
-    text-align: center;
-    font-size: 50px;
-    margin: 5px 0px;
-  }
+.standard-content h2 {
+  color: #D3D3D3;
+  font-family: 'WeblySleek';
+  text-align: center;
+  font-size: 50px;
+  margin: 5px 0px;
+}
 
-  .standard-content p {
-    color: #EEEEEE;
-    font-family: 'WeblySleek';
-    font-size: 18px;
-    text-align: center;
-    margin-top: 20px;
-    
-  }
+.standard-content p {
+  color: #EEEEEE;
+  font-family: 'WeblySleek';
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
+}
 
 .carousel-indicators {
   bottom: -10px;
@@ -245,5 +373,11 @@ body {
 }
 
 .carousel-control.left, .carousel-control.right {
-    background-image: none
+  background-image: none;
+}
+
+.carousel-custom-caption {
+  margin: 5px;
+  color: #EEEEEE;
+  text-align: center;
 }

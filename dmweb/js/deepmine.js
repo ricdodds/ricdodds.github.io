@@ -1,4 +1,5 @@
 var fixed = false;
+var url = "https://www.youtube.com/embed/pem5izo8jjQ?controls=0&rel=0&modestbranding=1&autoplay=1";
 
 var affixedNavbarTop = $("#affixed-navbar").offset().top;
 var affixedNavbarBottom = $("#affixed-navbar").next().offset().top;
@@ -9,28 +10,77 @@ var innerAffixedNavbarHeight = affixedNavbarBottom - innerAffixedNavbarTop;
 
 var navbarCustomHeaderHeight = innerAffixedNavbarTop - affixedNavbarTop;
 
-$(document).ready(function() {
-  adjustNavbarPadding();
+var scrollr;
+
+$(document).ready(function () {
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) == false) {
-    var s = skrollr.init();
-    $("html").niceScroll({scrollspeed:60});
+    scrollr = skrollr.init();
+    $("html").niceScroll({ scrollspeed: 60 });
   }
-  
+
+  var windowInnerWidth = window.innerWidth;
+  adjustNavbarPadding(windowInnerWidth);
+  adjustHolisticBlocksPosition(windowInnerWidth);
+
 });
 
-window.onresize = function(event) {
-  adjustNavbarPadding();
+window.onresize = function (event) {
+  var windowInnerWidth = window.innerWidth;
+  adjustNavbarPadding(windowInnerWidth);
+  adjustHolisticBlocksPosition(windowInnerWidth);
 };
 
-function adjustNavbarPadding() {
-  var windowInnerWidth = window.innerWidth;
-  var padding = 30;
+function adjustNavbarPadding(windowInnerWidth) {
+  var padding = 13;
   if (windowInnerWidth < 768)
     padding = 0;
 
   $('.navbar-collapse').css({
     'padding-top': padding + 'px'
   });
+}
+
+function adjustHolisticBlocksPosition(windowInnerWidth) {
+  var dW, dH;
+
+  var minePlanLeft = $('.mine-plan').offset().left;
+  var minePlanTop = $('.mine-plan').offset().top;
+  var minePlanWidth = $('.mine-plan').outerWidth(true);
+  var minePlanHeight = $('.mine-plan').outerHeight(true);
+
+  var geoModelLeft = $('.geo-model').parent().offset().left;
+  var geoModelTop = $('.geo-model').parent().offset().top;
+
+  dW = minePlanLeft - geoModelLeft - 200;
+  dH = minePlanTop - geoModelTop - 160;
+  $('.geo-model').attr("data-350-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; left: " + dW + "px; border-width: 1px");
+
+  var miningEnvironmentLeft = $('.mining-environment').parent().offset().left;
+  var miningEnvironmentTop = $('.mining-environment').parent().offset().top;
+  var miningEnvironmentWidth = $('.mining-environment').outerWidth(true);
+
+  dW = (miningEnvironmentLeft + miningEnvironmentWidth) - (minePlanLeft + minePlanWidth) - 170;
+  dH = minePlanTop - miningEnvironmentTop - 160;
+  $('.mining-environment').attr("data-350-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; right: " + dW + "px; border-width: 1px");
+
+  var pitCollectionLeft = $('.pit-collection').parent().offset().left;
+  var pitCollectionTop = $('.pit-collection').parent().offset().top;
+  var pitCollectionHeight = $('.pit-collection').outerHeight(true);
+
+  dW = minePlanLeft - pitCollectionLeft - 200;
+  dH = (pitCollectionTop + pitCollectionHeight) - (minePlanTop + minePlanHeight) - 240;
+  $('.pit-collection').attr("data-550-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; left: " + dW + "px; border-width: 1px");
+
+  var economicEnvironmentLeft = $('.economic-environment').parent().offset().left;
+  var economicEnvironmentTop = $('.economic-environment').parent().offset().top;
+  var economicEnvironmentWidth = $('.economic-environment').outerWidth(true);
+  var economicEnvironmentHeight = $('.economic-environment').outerHeight(true);
+
+  dW = (economicEnvironmentLeft + economicEnvironmentWidth) - (minePlanLeft + minePlanWidth) - 170;
+  dH = (economicEnvironmentTop + economicEnvironmentHeight) - (minePlanTop + minePlanHeight) - 240;
+  $('.economic-environment').attr("data-550-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; right: " + dW + "px; border-width: 1px");
+
+  scrollr.refresh();
 }
 
 function updateCustomNavbarIconsBackground() {
@@ -95,21 +145,66 @@ window.onscroll = function (event) {
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
-    $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-          scrollTop: $($anchor.attr('href')).offset().top - innerAffixedNavbarHeight
-        }, 300, 'easeInOutExpo');
-        event.preventDefault();
-    });
+  $('a.page-scroll').bind('click', function(event) {
+      var $anchor = $(this);
+      $('html, body').stop().animate({
+        scrollTop: $($anchor.attr('href')).offset().top - innerAffixedNavbarHeight
+      }, 300, 'easeInOutExpo');
+      event.preventDefault();
+  });
 });
 
 $(function() {
-    $('a.page-scroll-main').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 300, 'easeInOutExpo');
-        event.preventDefault();
-    });
+  $('a.page-scroll-main').bind('click', function(event) {
+      var $anchor = $(this);
+      $('html, body').stop().animate({
+          scrollTop: $($anchor.attr('href')).offset().top
+      }, 300, 'easeInOutExpo');
+      event.preventDefault();
+  });
+});
+
+$('#video-modal').on('hidden.bs.modal', function () {
+  $('#yt-id').attr('src', '');
+});
+
+
+$('#video-modal').on('show.bs.modal', function () {
+  var documentWidth = $(window).width();
+  var documentHeight = $(window).height();
+
+  var documentAspectRatio = documentWidth / documentHeight;
+  var youtubeAspectRatio = 16 / 9;
+
+  console.log(documentAspectRatio);
+  console.log(youtubeAspectRatio);
+
+  var videoWidth, videoHeight;
+  if (documentAspectRatio < youtubeAspectRatio) {
+    videoWidth = documentWidth * 0.8;
+    videoHeight = videoWidth / youtubeAspectRatio;
+  } else {
+    videoHeight = documentHeight * 0.8;
+    videoWidth = videoHeight * youtubeAspectRatio;
+  }
+
+  $('#yt-id').width(videoWidth);
+  $('#yt-id').height(videoHeight);
+
+  $('.modal-content').width(videoWidth);
+  $('.modal-content').height(videoHeight);
+  $('.modal-content').css("margin-top", documentHeight * 0.1);
+
+});
+
+$("#play-it").click(function () {
+  $('#yt-id').attr('src', url);
+});
+
+$("#play-it").mouseover(function () {
+  $(this).attr("src", "images/VideoThumbOverlay.png");
+});
+
+$("#play-it").mouseout(function () {
+  $(this).attr("src", "images/VideoThumb.png");
 });
