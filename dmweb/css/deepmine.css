@@ -148,12 +148,12 @@
   margin: 0px;
   padding-top: 20px;
   padding-bottom: 25px;
-  min-width: 660px;
+  /*min-width: 660px;*/
 }
 
 .navbar-custom-nav {
   text-align: center;
-  min-width: 620px;
+  /*min-width: 620px;*/
 }
 
 .navbar-custom-nav > li {

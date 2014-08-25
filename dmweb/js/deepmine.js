@@ -19,18 +19,20 @@ $(document).ready(function () {
   }
 
   var windowInnerWidth = window.innerWidth;
-  adjustNavbarPadding(windowInnerWidth);
+  adjustMainNavbarPadding(windowInnerWidth);
+  adjustCustomNavbarSize(windowInnerWidth);
   adjustHolisticBlocksPosition(windowInnerWidth);
 
 });
 
 window.onresize = function (event) {
   var windowInnerWidth = window.innerWidth;
-  adjustNavbarPadding(windowInnerWidth);
+  adjustMainNavbarPadding(windowInnerWidth);
+  adjustCustomNavbarSize(windowInnerWidth);
   adjustHolisticBlocksPosition(windowInnerWidth);
 };
 
-function adjustNavbarPadding(windowInnerWidth) {
+function adjustMainNavbarPadding(windowInnerWidth) {
   var padding = 13;
   if (windowInnerWidth < 768)
     padding = 0;
@@ -38,6 +40,27 @@ function adjustNavbarPadding(windowInnerWidth) {
   $('.navbar-collapse').css({
     'padding-top': padding + 'px'
   });
+}
+
+function adjustCustomNavbarSize(windowInnerWidth) {
+  var originalHeaderFontSize = 36;
+  var originalFontSize = 14;
+  var originalPadding = 20;
+  var originalImageSize = 48;
+
+  var delta = 1;
+  if (windowInnerWidth < 650) {
+    delta -= (650 - windowInnerWidth) / 650;   
+  }
+
+  $('.navbar-custom-header').css("font-size", originalHeaderFontSize * delta + "px");
+  $('.navbar-custom-section').css("font-size", originalFontSize * delta + "px");
+
+  $('.navbar-custom-section').css("padding-left", originalPadding * delta + "px");
+  $('.navbar-custom-section').css("padding-right", originalPadding * delta + "px");
+
+  $('.navbar-custom-logo').css("width", originalImageSize * delta + "px");
+  $('.navbar-custom-logo').css("height", originalImageSize * delta + "px");
 }
 
 function adjustHolisticBlocksPosition(windowInnerWidth) {
