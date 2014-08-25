@@ -106,7 +106,12 @@ function adjustHolisticBlocksPosition(windowInnerWidth) {
 
   dW = (miningEnvironmentLeft + miningEnvironmentWidth) - (minePlanLeft + minePlanWidth) - fittedBlocksize * 0.85;
   dH = minePlanTop - miningEnvironmentTop - fittedBlocksize * 0.9;
-  $('.mining-environment').attr("data-350-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; right: " + dW + "px; border-width: 1px");
+  if (!isMobile)
+    $('.mining-environment').attr("data-350-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; right: " + dW + "px; border-width: 1px");
+  else {
+    $('.mining-environment').css("top", dH + "px");
+    $('.mining-environment').css("left", dW + "px");
+  }
 
   var pitCollectionLeft = $('.pit-collection').parent().offset().left;
   var pitCollectionTop = $('.pit-collection').parent().offset().top;
@@ -114,7 +119,12 @@ function adjustHolisticBlocksPosition(windowInnerWidth) {
 
   dW = minePlanLeft - pitCollectionLeft - fittedBlocksize;
   dH = (pitCollectionTop + pitCollectionHeight) - (minePlanTop + minePlanHeight) - fittedBlocksize * 1.1;
-  $('.pit-collection').attr("data-550-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; left: " + dW + "px; border-width: 1px");
+  if (!isMobile)
+    $('.pit-collection').attr("data-550-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; left: " + dW + "px; border-width: 1px");
+  else {
+    $('.pit-collection').css("top", dH + "px");
+    $('.pit-collection').css("left", dW + "px");
+  }
 
   var economicEnvironmentLeft = $('.economic-environment').parent().offset().left;
   var economicEnvironmentTop = $('.economic-environment').parent().offset().top;
@@ -123,7 +133,12 @@ function adjustHolisticBlocksPosition(windowInnerWidth) {
 
   dW = (economicEnvironmentLeft + economicEnvironmentWidth) - (minePlanLeft + minePlanWidth) - fittedBlocksize * 0.85;
   dH = (economicEnvironmentTop + economicEnvironmentHeight) - (minePlanTop + minePlanHeight) - fittedBlocksize * 1.1;
-  $('.economic-environment').attr("data-550-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; right: " + dW + "px; border-width: 1px");
+  if (!isMobile)
+    $('.economic-environment').attr("data-550-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; right: " + dW + "px; border-width: 1px");
+  else {
+    $('.economic-environment').css("top", dH + "px");
+    $('.economic-environment').css("left", dW + "px");
+  }
 
   scrollr.refresh();
 }
