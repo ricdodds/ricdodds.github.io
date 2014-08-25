@@ -16,8 +16,6 @@
   font-family: 'WeblySleek';
   position: relative;
   padding: 20px;
-  width: 220px;
-  height: 200px;
   /*border-style: groove ridge ridge groove;*/
   border-style: solid;
   border-width: 1px;
@@ -36,7 +34,7 @@
 }
 
 .mine-plan {
-  padding: 80px 80px;
+  /*padding: 80px 80px;*/
   background-color: rgba(0, 0, 0, 1);
   border-color: rgba(81, 110, 117, 1);
   border-width: 5px;
@@ -141,19 +139,16 @@
 
 .navbar-custom-header {
   font-family: 'WeblySleek';
-  font-size: 40px;
   text-align: center;
   color: white;
   text-transform: none;
   margin: 0px;
   padding-top: 20px;
   padding-bottom: 25px;
-  /*min-width: 660px;*/
 }
 
 .navbar-custom-nav {
   text-align: center;
-  /*min-width: 620px;*/
 }
 
 .navbar-custom-nav > li {

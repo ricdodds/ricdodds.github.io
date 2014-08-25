@@ -64,6 +64,19 @@ function adjustCustomNavbarSize(windowInnerWidth) {
 }
 
 function adjustHolisticBlocksPosition(windowInnerWidth) {
+  var originalBlockSize = 200;
+  
+  var triggerWidth = 700;
+  var delta = 1;
+  if (windowInnerWidth < triggerWidth) {
+    delta -= (triggerWidth - windowInnerWidth) / triggerWidth;
+  }
+
+  var fittedBlocksize = originalBlockSize * delta;
+
+  $('.holistic-block').css("width", fittedBlocksize + "px");
+  $('.holistic-block').css("height", fittedBlocksize + "px");
+
   var dW, dH;
 
   var minePlanLeft = $('.mine-plan').offset().left;
@@ -74,24 +87,24 @@ function adjustHolisticBlocksPosition(windowInnerWidth) {
   var geoModelLeft = $('.geo-model').parent().offset().left;
   var geoModelTop = $('.geo-model').parent().offset().top;
 
-  dW = minePlanLeft - geoModelLeft - 200;
-  dH = minePlanTop - geoModelTop - 160;
+  dW = minePlanLeft - geoModelLeft - fittedBlocksize;
+  dH = minePlanTop - geoModelTop - fittedBlocksize * 0.9;
   $('.geo-model').attr("data-350-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; left: " + dW + "px; border-width: 1px");
 
   var miningEnvironmentLeft = $('.mining-environment').parent().offset().left;
   var miningEnvironmentTop = $('.mining-environment').parent().offset().top;
   var miningEnvironmentWidth = $('.mining-environment').outerWidth(true);
 
-  dW = (miningEnvironmentLeft + miningEnvironmentWidth) - (minePlanLeft + minePlanWidth) - 170;
-  dH = minePlanTop - miningEnvironmentTop - 160;
+  dW = (miningEnvironmentLeft + miningEnvironmentWidth) - (minePlanLeft + minePlanWidth) - fittedBlocksize * 0.85;
+  dH = minePlanTop - miningEnvironmentTop - fittedBlocksize * 0.9;
   $('.mining-environment').attr("data-350-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; right: " + dW + "px; border-width: 1px");
 
   var pitCollectionLeft = $('.pit-collection').parent().offset().left;
   var pitCollectionTop = $('.pit-collection').parent().offset().top;
   var pitCollectionHeight = $('.pit-collection').outerHeight(true);
 
-  dW = minePlanLeft - pitCollectionLeft - 200;
-  dH = (pitCollectionTop + pitCollectionHeight) - (minePlanTop + minePlanHeight) - 240;
+  dW = minePlanLeft - pitCollectionLeft - fittedBlocksize;
+  dH = (pitCollectionTop + pitCollectionHeight) - (minePlanTop + minePlanHeight) - fittedBlocksize * 1.1;
   $('.pit-collection').attr("data-550-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; left: " + dW + "px; border-width: 1px");
 
   var economicEnvironmentLeft = $('.economic-environment').parent().offset().left;
@@ -99,8 +112,8 @@ function adjustHolisticBlocksPosition(windowInnerWidth) {
   var economicEnvironmentWidth = $('.economic-environment').outerWidth(true);
   var economicEnvironmentHeight = $('.economic-environment').outerHeight(true);
 
-  dW = (economicEnvironmentLeft + economicEnvironmentWidth) - (minePlanLeft + minePlanWidth) - 170;
-  dH = (economicEnvironmentTop + economicEnvironmentHeight) - (minePlanTop + minePlanHeight) - 240;
+  dW = (economicEnvironmentLeft + economicEnvironmentWidth) - (minePlanLeft + minePlanWidth) - fittedBlocksize * 0.85;
+  dH = (economicEnvironmentTop + economicEnvironmentHeight) - (minePlanTop + minePlanHeight) - fittedBlocksize * 1.1;
   $('.economic-environment').attr("data-550-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; right: " + dW + "px; border-width: 1px");
 
   scrollr.refresh();
