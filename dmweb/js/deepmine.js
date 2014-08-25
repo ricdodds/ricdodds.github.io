@@ -2,14 +2,14 @@ var fixed = false;
 var videoUrl = "https://www.youtube.com/embed/pem5izo8jjQ?controls=0&rel=0&modestbranding=1&autoplay=1";
 var isMobile = true;
 
-var affixedNavbarTop = $("#affixed-navbar").offset().top;
-var affixedNavbarBottom = $("#affixed-navbar").next().offset().top;
-var affixedNavbarHeight = affixedNavbarBottom - affixedNavbarTop;
+var affixedNavbarTop;
+var affixedNavbarBottom;
+var affixedNavbarHeight;
 
-var innerAffixedNavbarTop = $("#inner-affixed-navbar").offset().top;
-var innerAffixedNavbarHeight = affixedNavbarBottom - innerAffixedNavbarTop;
+var innerAffixedNavbarTop;
+var innerAffixedNavbarHeight;
 
-var navbarCustomHeaderHeight = innerAffixedNavbarTop - affixedNavbarTop;
+var navbarCustomHeaderHeight;
 
 var scrollr;
 
@@ -22,6 +22,7 @@ $(document).ready(function () {
 
   var windowInnerWidth = window.innerWidth;
   adjustMainNavbarPadding(windowInnerWidth);
+  updateCustomNavbarValues();
   adjustCustomNavbarSize(windowInnerWidth);
   adjustHolisticBlocksPosition(windowInnerWidth);
 
@@ -30,8 +31,10 @@ $(document).ready(function () {
 window.onresize = function (event) {
   var windowInnerWidth = window.innerWidth;
   adjustMainNavbarPadding(windowInnerWidth);
+  updateCustomNavbarValues();
   adjustCustomNavbarSize(windowInnerWidth);
   adjustHolisticBlocksPosition(windowInnerWidth);
+  updateCustomNavbarPositionStatus();
 };
 
 function adjustMainNavbarPadding(windowInnerWidth) {
@@ -42,6 +45,17 @@ function adjustMainNavbarPadding(windowInnerWidth) {
   $('.navbar-collapse').css({
     'padding-top': padding + 'px'
   });
+}
+
+function updateCustomNavbarValues() {
+  affixedNavbarTop = $("#affixed-navbar").offset().top;
+  affixedNavbarBottom = $("#affixed-navbar").next().offset().top;
+  affixedNavbarHeight = affixedNavbarBottom - affixedNavbarTop;
+
+  innerAffixedNavbarTop = $("#inner-affixed-navbar").offset().top;
+  innerAffixedNavbarHeight = affixedNavbarBottom - innerAffixedNavbarTop;
+
+  navbarCustomHeaderHeight = innerAffixedNavbarTop - affixedNavbarTop;
 }
 
 function adjustCustomNavbarSize(windowInnerWidth) {

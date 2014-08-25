@@ -90,7 +90,7 @@
   width: auto; 
   background: no-repeat center center scroll;
   background-size: cover;
-  background-position-y: -100px;
+  opacity: 1;
 }
 
 .frame-01 {
@@ -123,6 +123,26 @@
 
 .frame-08 {
   background-image: url(../images/PhaseFrames/PhaseFrame8.png);
+}
+
+.frame-09 {
+  background-image: url(../images/PhaseFrames/PhaseFrame9.png);
+}
+
+.frame-10 {
+  background-image: url(../images/PhaseFrames/PhaseFrame10.png);
+}
+
+.frame-11 {
+  background-image: url(../images/PhaseFrames/PhaseFrame11.png);
+}
+
+.frame-12 {
+  background-image: url(../images/PhaseFrames/PhaseFrame12.png);
+}
+
+.frame-13 {
+  background-image: url(../images/PhaseFrames/PhaseFrame13.png);
 }
 
 .phase-gif-09 {
