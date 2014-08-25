@@ -91,7 +91,14 @@ function adjustHolisticBlocksPosition(windowInnerWidth) {
 
   dW = minePlanLeft - geoModelLeft - fittedBlocksize;
   dH = minePlanTop - geoModelTop - fittedBlocksize * 0.9;
-  $('.geo-model').attr("data-350-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; left: " + dW + "px; border-width: 1px");
+
+  if (!isMobile)
+    $('.geo-model').attr("data-350-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; left: " + dW + "px; border-width: 1px");
+  else {
+    $('.geo-model').css("top", dH + "px");
+    $('.geo-model').css("left", dW + "px");
+  }
+
 
   var miningEnvironmentLeft = $('.mining-environment').parent().offset().left;
   var miningEnvironmentTop = $('.mining-environment').parent().offset().top;
@@ -118,8 +125,7 @@ function adjustHolisticBlocksPosition(windowInnerWidth) {
   dH = (economicEnvironmentTop + economicEnvironmentHeight) - (minePlanTop + minePlanHeight) - fittedBlocksize * 1.1;
   $('.economic-environment').attr("data-550-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; right: " + dW + "px; border-width: 1px");
 
-  if (isMobile == false)
-    scrollr.refresh();
+  scrollr.refresh();
 }
 
 function updateCustomNavbarIconsBackground() {
