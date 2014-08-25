@@ -1,5 +1,6 @@
 var fixed = false;
-var url = "https://www.youtube.com/embed/pem5izo8jjQ?controls=0&rel=0&modestbranding=1&autoplay=1";
+var videoUrl = "https://www.youtube.com/embed/pem5izo8jjQ?controls=0&rel=0&modestbranding=1&autoplay=1";
+var isMobile = true;
 
 var affixedNavbarTop = $("#affixed-navbar").offset().top;
 var affixedNavbarBottom = $("#affixed-navbar").next().offset().top;
@@ -14,6 +15,7 @@ var scrollr;
 
 $(document).ready(function () {
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) == false) {
+    isMobile = false;
     scrollr = skrollr.init();
     $("html").niceScroll({ scrollspeed: 60 });
   }
@@ -116,7 +118,8 @@ function adjustHolisticBlocksPosition(windowInnerWidth) {
   dH = (economicEnvironmentTop + economicEnvironmentHeight) - (minePlanTop + minePlanHeight) - fittedBlocksize * 1.1;
   $('.economic-environment').attr("data-550-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; right: " + dW + "px; border-width: 1px");
 
-  scrollr.refresh();
+  if (isMobile == false)
+    scrollr.refresh();
 }
 
 function updateCustomNavbarIconsBackground() {
@@ -234,7 +237,7 @@ $('#video-modal').on('show.bs.modal', function () {
 });
 
 $("#play-it").click(function () {
-  $('#yt-id').attr('src', url);
+  $('#yt-id').attr('src', videoUrl);
 });
 
 $("#play-it").mouseover(function () {
