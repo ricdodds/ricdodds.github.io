@@ -22,3 +22,4 @@ function adjustNavbarPadding(windowInnerWidth) {
     'padding-top': padding + 'px'
   });
 }
+

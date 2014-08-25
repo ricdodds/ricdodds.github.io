@@ -1,15 +1,15 @@
-var fixed = false;
 var videoUrl = "https://www.youtube.com/embed/pem5izo8jjQ?controls=0&rel=0&modestbranding=1&autoplay=1";
+
+var fixed = false;
 var isMobile = true;
 
-var affixedNavbarTop;
-var affixedNavbarBottom;
-var affixedNavbarHeight;
-
-var innerAffixedNavbarTop;
-var innerAffixedNavbarHeight;
-
-var navbarCustomHeaderHeight;
+var affixedNavbarTop = $("#affixed-navbar").offset().top;
+var affixedNavbarBottom = $("#affixed-navbar").next().offset().top;
+var affixedNavbarHeight = affixedNavbarBottom - affixedNavbarTop;
+var innerAffixedNavbarTop = $("#inner-affixed-navbar").offset().top;
+var innerAffixedNavbarHeight = affixedNavbarBottom - innerAffixedNavbarTop;
+var navbarCustomHeaderHeight = innerAffixedNavbarTop - affixedNavbarTop;
+var affixedNavbarEndSection = $('.last-section').offset().top;
 
 var scrollr;
 
@@ -48,14 +48,17 @@ function adjustMainNavbarPadding(windowInnerWidth) {
 }
 
 function updateCustomNavbarValues() {
-  affixedNavbarTop = $("#affixed-navbar").offset().top;
-  affixedNavbarBottom = $("#affixed-navbar").next().offset().top;
-  affixedNavbarHeight = affixedNavbarBottom - affixedNavbarTop;
 
-  innerAffixedNavbarTop = $("#inner-affixed-navbar").offset().top;
-  innerAffixedNavbarHeight = affixedNavbarBottom - innerAffixedNavbarTop;
-
-  navbarCustomHeaderHeight = innerAffixedNavbarTop - affixedNavbarTop;
+  //var affixedNavbarTop = $("#affixed-navbar").offset().top;
+  //var affixedNavbarBottom = $("#affixed-navbar").next().offset().top;
+  //var affixedNavbarHeight = affixedNavbarBottom - affixedNavbarTop;
+  
+  //var innerAffixedNavbarTop = $("#inner-affixed-navbar").offset().top;
+  //var innerAffixedNavbarHeight = affixedNavbarBottom - innerAffixedNavbarTop;
+  
+  //var navbarCustomHeaderHeight = innerAffixedNavbarTop - affixedNavbarTop;
+  
+  //var affixedNavbarEndSection = $('.last-section').offset().top;
 }
 
 function adjustCustomNavbarSize(windowInnerWidth) {
@@ -113,7 +116,6 @@ function adjustHolisticBlocksPosition(windowInnerWidth) {
     $('.geo-model').css("left", dW + "px");
   }
 
-
   var miningEnvironmentLeft = $('.mining-environment').parent().offset().left;
   var miningEnvironmentTop = $('.mining-environment').parent().offset().top;
   var miningEnvironmentWidth = $('.mining-environment').outerWidth(true);
@@ -134,7 +136,7 @@ function adjustHolisticBlocksPosition(windowInnerWidth) {
   dW = minePlanLeft - pitCollectionLeft - fittedBlocksize;
   dH = (pitCollectionTop + pitCollectionHeight) - (minePlanTop + minePlanHeight) - fittedBlocksize * 1.1;
   if (!isMobile)
-    $('.pit-collection').attr("data-550-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; left: " + dW + "px; border-width: 1px");
+    $('.pit-collection').attr("data-750-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; left: " + dW + "px; border-width: 1px");
   else {
     $('.pit-collection').css("top", dH + "px");
     $('.pit-collection').css("left", dW + "px");
@@ -148,7 +150,7 @@ function adjustHolisticBlocksPosition(windowInnerWidth) {
   dW = (economicEnvironmentLeft + economicEnvironmentWidth) - (minePlanLeft + minePlanWidth) - fittedBlocksize * 0.85;
   dH = (economicEnvironmentTop + economicEnvironmentHeight) - (minePlanTop + minePlanHeight) - fittedBlocksize * 1.1;
   if (!isMobile)
-    $('.economic-environment').attr("data-550-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; right: " + dW + "px; border-width: 1px");
+    $('.economic-environment').attr("data-750-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; right: " + dW + "px; border-width: 1px");
   else {
     $('.economic-environment').css("top", dH + "px");
     $('.economic-environment').css("left", dW + "px");
@@ -192,13 +194,16 @@ function updateCustomNavbarIconsBackground() {
 
 
 function updateCustomNavbarPositionStatus() {
-  if (window.pageYOffset >= innerAffixedNavbarTop && !fixed) {
+  if (window.pageYOffset >= innerAffixedNavbarTop && window.pageYOffset < affixedNavbarEndSection && !fixed) {
     var $div = $("<div>");
     $div.height(affixedNavbarHeight);
     $("#affixed-navbar").before($div);
 
     $("#affixed-navbar").addClass("is-stuck");
     $("#affixed-navbar").css("top", -navbarCustomHeaderHeight + "px");
+
+    affixedNavbarEndSection = $('.last-section').offset().top;
+    
     fixed = true;
   }
 
@@ -208,6 +213,16 @@ function updateCustomNavbarPositionStatus() {
 
     $("#affixed-navbar").removeClass("is-stuck");
     $("#affixed-navbar").css("top", 0 + "px");
+    updateCustomNavbarValues();
+    fixed = false;
+  }
+
+  if (window.pageYOffset >= affixedNavbarEndSection && fixed) {
+    $("#affixed-navbar").prev().remove();
+
+    $("#affixed-navbar").removeClass("is-stuck");
+    $("#affixed-navbar").css("top", 0 + "px");
+    updateCustomNavbarValues();
     fixed = false;
   }
 }
