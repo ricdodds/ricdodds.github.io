@@ -6,5 +6,52 @@
     "contact": "CONTACTO",
     "blog": "BLOG"
   },
-  "headline": "Test"
+  "headline": "Crea planes mineros estratégicos sin límites",
+  "headline_video": "Ver Video",
+  "carousel": {
+    "headline": "Sólo puedes pensar estratégicamente si tienes la herramienta adecuada",
+    "p1": "Sabemos que las decisiones estratégicas son las que mayor impacto tienen en una operación minera. La planificación minera estratética deberia realizarse bajo el mayor grado de flexibilidad y libertad, y no debería estar limitada por las tecnologías usadas.",
+    "p2": "DeepMine es la primera herramienta diseñada desde un principio para empoderar a los planificadores mineros en la evaluación de decisiones estratégicas. Ir desde un modelo de bloques a fases factibles alinedas a tu estrategia nunca había sido tan fácil."
+  },
+  "custom_menu": {
+    "headline": "Deepmine es la única herramienta realmente:",
+    "dynamic": "DINÁMICA",
+    "holistic": "HOLÍSTICA",
+    "pragmatic": "PRAGMÁTICA",
+    "insightful": "PERSPICAZ",
+    "stochastic":  "ESTOCÁSTICA"
+  },
+  "dynamic_section": {
+    "headline": "En la estrategia se deben explorar posibilidades dinámicamente",
+    "p1": "El avanzado motor de DeepMine está basado en programación dinámica aproximada, tecnología que explora múltiples posibilidades para crear el mejor resultado para cada configuración minera.",
+    "p2": "This novel approach maximizes your operation’s value taking into account the time value of money and existing opportunity costs, while ensuring operational feasibility."
+  },
+  "holistic_section": {
+    "headline": "Don't settle for a sequential approach",
+    "p": "Planning in sequential steps constrains the strategic possibilities of your mine. DeepMine’s engine takes all of the relevant information simultaneously when creating plans, and provides an organization structure that can be effortlessly modified and recombined.",
+    "geo_header": "geological input",
+    "geo_text":  "slope angles, grades, rock types, zones and areas, block variables, densities",
+    "mine_header": "mine details",
+    "mine_text":  "capacities, costs, processes, recoveries, blending restrictions",
+    "pit_header": "phase restrictions",
+    "pit_text":  "minimum width, maximum length, simultaneus phases, weight limits ",
+    "economic_header": "economic data",
+    "economic_text": "commodity prices, discount rates, sales costs, volatility, long term tendencies",
+    "mine_plan": "mine plan"
+  },
+  "pragmatic_section": {
+    "headline": "Go from block model to phases in a single step",
+    "p1": "Traditional strategic planning usually takes phase design as an input, over which different alternatives are evaluated. This approach hides the potential of strategic decisions, since different designs could perform better under new conditions.",
+    "p2": "Phase design should respond to a plan’s strategy, not the other way around. DeepMine is the only tool that uncovers the true effect of strategic decisions by changing the role of phase design, from input to output."
+  },
+  "insightful_section": {
+    "headline": "Visualize and understand results like never before",
+    "p1": "DeepMine’s interface and visualization tools are second to none. Gain unparalleled insight about your mine plan with our state-of-the-art visualization system, crystal-clear charts and detailed reports.",
+    "p2": "We truly believe that software shouldn’t get in the way of its own usage. With that in mind, we have created an interface that strikes the perfect balance between simplicity and completeness. Review your information from a full plan down to each block in seconds."
+  },
+  "stochastic_section": {
+    "headline": "Turn uncertainty into opportunity",
+    "p1": "Uncertainty usually comes late in the planning cycle, and is only introduced to see how it affects an already defined plan. DeepMine’s engine lets you consider uncertainty from the beginning, creating plans under stochastic economic scenarios.",
+    "p2": "Take further advantage of uncertainty by introducing flexibility into your strategy, using Real Option to increase the potential value of your mine."
+  }
 }

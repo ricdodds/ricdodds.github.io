@@ -9,27 +9,36 @@ var affixedNavbarHeight = affixedNavbarBottom - affixedNavbarTop;
 var innerAffixedNavbarTop = $("#inner-affixed-navbar").offset().top;
 var innerAffixedNavbarHeight = affixedNavbarBottom - innerAffixedNavbarTop;
 var navbarCustomHeaderHeight = innerAffixedNavbarTop - affixedNavbarTop;
+
+
+
 var affixedNavbarEndSection = $('.last-section').offset().top;
+
 
 var scrollr;
 
 $(document).ready(function () {
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) == false) {
     isMobile = false;
+  }
+  //isMobile = true;
+  if (!isMobile) {
+
     scrollr = skrollr.init();
     $("html").niceScroll({ scrollspeed: 60 });
   }
 
   var windowInnerWidth = window.innerWidth;
+
   adjustMainNavbarPadding(windowInnerWidth);
   updateCustomNavbarValues();
   adjustCustomNavbarSize(windowInnerWidth);
   adjustHolisticBlocksPosition(windowInnerWidth);
-
 });
 
 window.onresize = function (event) {
   var windowInnerWidth = window.innerWidth;
+
   adjustMainNavbarPadding(windowInnerWidth);
   updateCustomNavbarValues();
   adjustCustomNavbarSize(windowInnerWidth);
@@ -52,12 +61,12 @@ function updateCustomNavbarValues() {
   //var affixedNavbarTop = $("#affixed-navbar").offset().top;
   //var affixedNavbarBottom = $("#affixed-navbar").next().offset().top;
   //var affixedNavbarHeight = affixedNavbarBottom - affixedNavbarTop;
-  
+
   //var innerAffixedNavbarTop = $("#inner-affixed-navbar").offset().top;
   //var innerAffixedNavbarHeight = affixedNavbarBottom - innerAffixedNavbarTop;
-  
+
   //var navbarCustomHeaderHeight = innerAffixedNavbarTop - affixedNavbarTop;
-  
+
   //var affixedNavbarEndSection = $('.last-section').offset().top;
 }
 
@@ -69,7 +78,7 @@ function adjustCustomNavbarSize(windowInnerWidth) {
 
   var delta = 1;
   if (windowInnerWidth < 650) {
-    delta -= (650 - windowInnerWidth) / 650;   
+    delta -= (650 - windowInnerWidth) / 650;
   }
 
   $('.navbar-custom-header').css("font-size", originalHeaderFontSize * delta + "px");
@@ -82,9 +91,14 @@ function adjustCustomNavbarSize(windowInnerWidth) {
   $('.navbar-custom-logo').css("height", originalImageSize * delta + "px");
 }
 
+
+
 function adjustHolisticBlocksPosition(windowInnerWidth) {
   var originalBlockSize = 200;
-  
+  var originalFontSize = 18;
+  var originalHeaderFontSize = 40;
+  var originalPaddingSize = 10;
+
   var triggerWidth = 700;
   var delta = 1;
   if (windowInnerWidth < triggerWidth) {
@@ -95,6 +109,9 @@ function adjustHolisticBlocksPosition(windowInnerWidth) {
 
   $('.holistic-block').css("width", fittedBlocksize + "px");
   $('.holistic-block').css("height", fittedBlocksize + "px");
+  $('.holistic-block p').css("font-size", originalFontSize * delta + "px");
+  $('.holistic-block h2').css("font-size", originalHeaderFontSize * delta + "px");
+  $('.holistic-block').css("padding", originalPaddingSize * delta + "px");
 
   var dW, dH;
 
@@ -108,6 +125,7 @@ function adjustHolisticBlocksPosition(windowInnerWidth) {
 
   dW = minePlanLeft - geoModelLeft - fittedBlocksize;
   dH = minePlanTop - geoModelTop - fittedBlocksize * 0.9;
+  $('.geo-model').attr("data-290-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; left: " + dW + "px; border-width: 1px");
 
   if (!isMobile)
     $('.geo-model').attr("data-350-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; left: " + dW + "px; border-width: 1px");
@@ -120,13 +138,14 @@ function adjustHolisticBlocksPosition(windowInnerWidth) {
   var miningEnvironmentTop = $('.mining-environment').parent().offset().top;
   var miningEnvironmentWidth = $('.mining-environment').outerWidth(true);
 
-  dW = (miningEnvironmentLeft + miningEnvironmentWidth) - (minePlanLeft + minePlanWidth) - fittedBlocksize * 0.85;
+  //dW = (miningEnvironmentLeft + miningEnvironmentWidth) - (minePlanLeft + minePlanWidth) - fittedBlocksize * 0.85;
   dH = minePlanTop - miningEnvironmentTop - fittedBlocksize * 0.9;
   if (!isMobile)
     $('.mining-environment').attr("data-350-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; right: " + dW + "px; border-width: 1px");
   else {
     $('.mining-environment').css("top", dH + "px");
-    $('.mining-environment').css("left", dW + "px");
+    $('.mining-environment').css("right", dW + "px");
+
   }
 
   var pitCollectionLeft = $('.pit-collection').parent().offset().left;
@@ -137,6 +156,7 @@ function adjustHolisticBlocksPosition(windowInnerWidth) {
   dH = (pitCollectionTop + pitCollectionHeight) - (minePlanTop + minePlanHeight) - fittedBlocksize * 1.1;
   if (!isMobile)
     $('.pit-collection').attr("data-750-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; left: " + dW + "px; border-width: 1px");
+
   else {
     $('.pit-collection').css("top", dH + "px");
     $('.pit-collection').css("left", dW + "px");
@@ -147,14 +167,16 @@ function adjustHolisticBlocksPosition(windowInnerWidth) {
   var economicEnvironmentWidth = $('.economic-environment').outerWidth(true);
   var economicEnvironmentHeight = $('.economic-environment').outerHeight(true);
 
-  dW = (economicEnvironmentLeft + economicEnvironmentWidth) - (minePlanLeft + minePlanWidth) - fittedBlocksize * 0.85;
+  //dW = (economicEnvironmentLeft + economicEnvironmentWidth) - (minePlanLeft + minePlanWidth) - fittedBlocksize * 0.85;
   dH = (economicEnvironmentTop + economicEnvironmentHeight) - (minePlanTop + minePlanHeight) - fittedBlocksize * 1.1;
+
   if (!isMobile)
     $('.economic-environment').attr("data-750-top", "border-color: rgba(40, 40, 40, 1); top: " + dH + "px; right: " + dW + "px; border-width: 1px");
   else {
     $('.economic-environment').css("top", dH + "px");
-    $('.economic-environment').css("left", dW + "px");
+    $('.economic-environment').css("right", dW + "px");
   }
+
 
   scrollr.refresh();
 }
@@ -203,7 +225,7 @@ function updateCustomNavbarPositionStatus() {
     $("#affixed-navbar").css("top", -navbarCustomHeaderHeight + "px");
 
     affixedNavbarEndSection = $('.last-section').offset().top;
-    
+
     fixed = true;
   }
 
@@ -233,23 +255,23 @@ window.onscroll = function (event) {
 }
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function() {
-  $('a.page-scroll').bind('click', function(event) {
-      var $anchor = $(this);
-      $('html, body').stop().animate({
-        scrollTop: $($anchor.attr('href')).offset().top - innerAffixedNavbarHeight
-      }, 300, 'easeInOutExpo');
-      event.preventDefault();
+$(function () {
+  $('a.page-scroll').bind('click', function (event) {
+    var $anchor = $(this);
+    $('html, body').stop().animate({
+      scrollTop: $($anchor.attr('href')).offset().top - innerAffixedNavbarHeight
+    }, 300, 'easeInOutExpo');
+    event.preventDefault();
   });
 });
 
-$(function() {
-  $('a.page-scroll-main').bind('click', function(event) {
-      var $anchor = $(this);
-      $('html, body').stop().animate({
-          scrollTop: $($anchor.attr('href')).offset().top
-      }, 300, 'easeInOutExpo');
-      event.preventDefault();
+$(function () {
+  $('a.page-scroll-main').bind('click', function (event) {
+    var $anchor = $(this);
+    $('html, body').stop().animate({
+      scrollTop: $($anchor.attr('href')).offset().top
+    }, 300, 'easeInOutExpo');
+    event.preventDefault();
   });
 });
 
