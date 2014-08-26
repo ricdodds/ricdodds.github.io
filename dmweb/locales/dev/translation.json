@@ -1,0 +1,9 @@
+﻿{
+  "menu": {
+    "surname": "Name:",
+    "firstName": "Vorname:"
+  },
+  "headline": "Daten:",
+  "headline_1": "Daten Allgemein:",
+  "headline_2": "Daten Speziell:"
+}

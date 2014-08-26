@@ -498,8 +498,8 @@ footer p {
   color: gray;
 }
 
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
     .container{
         width: 760px;
     }
-}
+}*/
