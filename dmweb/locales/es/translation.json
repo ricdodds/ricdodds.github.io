@@ -1,9 +1,9 @@
 ﻿{
   "main_menu": {
     "deepmine": "DEEPMINE",
-    "services": "SERVICES",
-    "company": "COMPANY",
-    "contact": "CONTACT US",
+    "services": "SERVICIOS",
+    "company": "COMPAÑÍA",
+    "contact": "CONTACTO",
     "blog": "BLOG"
   },
   "headline": "Test"
