@@ -6,7 +6,8 @@
     "contact": "CONTACT US",
     "blog": "BLOG"
   },
-  "headline": "Create strategic mine plans without limits",
+  "headline": "Create strategic mine plans without <strong>limits</strong>",
+  "headline-strong" :  "limits",
   "headline_video": "Watch Video",
   "carousel": {
     "headline": "You can only think strategically when you have the right tool",
@@ -37,7 +38,7 @@
     "pit_text":  "minimum width, maximum length, simultaneus phases, weight limits ",
     "economic_header": "economic data",
     "economic_text": "commodity prices, discount rates, sales costs, volatility, long term tendencies",
-    "mine_plan": "mine plan"
+    "mine_plan": "MINE<br/>PLAN"
   },
   "pragmatic_section": {
     "headline": "Go from block model to phases in a single step",
@@ -53,5 +54,14 @@
     "headline": "Turn uncertainty into opportunity",
     "p1": "Uncertainty usually comes late in the planning cycle, and is only introduced to see how it affects an already defined plan. DeepMine’s engine lets you consider uncertainty from the beginning, creating plans under stochastic economic scenarios.",
     "p2": "Take further advantage of uncertainty by introducing flexibility into your strategy, using Real Option to increase the potential value of your mine."
+  },
+  "contact_page": {
+    "headline": "We'd like to hear from you",
+    "p": "If you want to know more about us, or have any questions or comments, please fill out the form below or give us a call.",
+    "name": "Your Name *",
+    "email": "Your Email *",
+    "phone": "Your Phone *",
+    "message": "Your Message *",
+    "send_button":  "Send Message"
   }
 }

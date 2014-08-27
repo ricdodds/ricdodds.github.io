@@ -34,6 +34,11 @@ $(document).ready(function () {
   updateCustomNavbarValues();
   adjustCustomNavbarSize(windowInnerWidth);
   adjustHolisticBlocksPosition(windowInnerWidth);
+
+  i18n.init().done(function() {
+    scrollr.refresh();
+    updateCustomNavbarValues();
+  });
 });
 
 window.onresize = function (event) {
@@ -58,16 +63,16 @@ function adjustMainNavbarPadding(windowInnerWidth) {
 
 function updateCustomNavbarValues() {
 
-  //var affixedNavbarTop = $("#affixed-navbar").offset().top;
-  //var affixedNavbarBottom = $("#affixed-navbar").next().offset().top;
-  //var affixedNavbarHeight = affixedNavbarBottom - affixedNavbarTop;
+  affixedNavbarTop = $("#affixed-navbar").offset().top;
+  affixedNavbarBottom = $("#affixed-navbar").next().offset().top;
+  affixedNavbarHeight = affixedNavbarBottom - affixedNavbarTop;
 
-  //var innerAffixedNavbarTop = $("#inner-affixed-navbar").offset().top;
-  //var innerAffixedNavbarHeight = affixedNavbarBottom - innerAffixedNavbarTop;
+  innerAffixedNavbarTop = $("#inner-affixed-navbar").offset().top;
+  innerAffixedNavbarHeight = affixedNavbarBottom - innerAffixedNavbarTop;
 
-  //var navbarCustomHeaderHeight = innerAffixedNavbarTop - affixedNavbarTop;
+  navbarCustomHeaderHeight = innerAffixedNavbarTop - affixedNavbarTop;
 
-  //var affixedNavbarEndSection = $('.last-section').offset().top;
+  affixedNavbarEndSection = $('.last-section').offset().top;
 }
 
 function adjustCustomNavbarSize(windowInnerWidth) {

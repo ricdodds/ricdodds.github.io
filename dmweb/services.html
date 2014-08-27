@@ -47,10 +47,10 @@
 
   <!-- Navigation -->
   <nav class="navbar navbar-main navbar-inverse navbar-static-top" role="navigation">
-    <div class="container">
+    <div class="container" style="position:relative">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="#page-top">
           <img class="navbar-logo" src="images/Logo-02.png" alt="">
         </a>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
@@ -61,23 +61,33 @@
         </button>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
-
       <div class="collapse navbar-collapse navbar-left navbar-main-collapse">
         <ul class="nav navbar-nav">
           <li>
-            <a class="page-scroll-main" href="index.html#affixed-navbar">DEEPMINE</a>
+            <a class="page-scroll-main" href="index.html" data-i18n="main_menu.deepmine"></a>
           </li>
           <li>
-            <a href="services.html">SERVICES</a>
+            <a href="services.html" data-i18n="main_menu.services" style="color: #d3d3d3"></a>
           </li>
           <li>
-            <a href="company.html">COMPANY</a>
+            <a href="company.html" data-i18n="main_menu.company"></a>
           </li>
           <li>
-            <a href="contact.html">CONTACT US</a>
+            <a href="contact.html" data-i18n="main_menu.contact"></a>
           </li>
           <li>
-            <a href="http://blog.boamine.com/">BLOG</a>
+            <a href="http://blog.boamine.com/" data-i18n="main_menu.blog"></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="language-selector">
+        <ul>
+          <li class="english-switch">
+            <a class="english-switch-text">en</a>
+          </li>
+          <li class="spanish-switch">
+            <a class="spanish-switch-text">sp</a>
           </li>
         </ul>
       </div>
@@ -88,20 +98,59 @@
   </nav>
 
   <!-- Page Content -->
-  <header class="image-bg-fixed-height" data-0="background-position: 0px 0x" data-500="background-position: 0px 125px;">
-    <!--<img class="img-responsive img-center" src="images/DeepmineSunrise.png" alt="">-->
-    <div class="container">
-      <div class="headline">
-        <div class="headline-container">
-          <h1>Create strategic mine plans without <strong>limits</strong></h1>
-          <button type="button" class="btn btn-info">Watch Video</button>
+  <div class="services-section">
+    <div class="content-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="inverted-content">
+              <h2>Let's work together</h2>
+              <!--<div class="transparent-area">
+                <p>
+                  We do some services and we do them finger lickin good. Take a look at the wide variety of things that BOAMine can do for you, peggy sue.
+                </p>
+              </div>-->
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="service-section">
+              <div class="service-content">
+                <h2>Consulting Services</h2>
+                <p>We offer specialized consulting services in strategic mine planning and economic evaluation of mining projects.</p>
+                <p>We have worked with several projects and ongoing mining operations, addressing pressing specific issues, or helping mining companies evaluate their current strategy and find new opportunities and insights. Usually using DeepMine as a powerful tool to generate scenarios and data for in-depth analysis.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-section">
+              <div class="service-content">
+                <h2>Custom Development</h2>
+                <p>BOAMine has developed unique and in depth knowledge of the problem of strategic mine planning of open pit mines, as well as an advance set of tools and algorithms, some of which is accessible to the industry through DeepMine.</p>
+                <p>But we know that each mine is unique and faces particular challenges. Some of which can be very difficult to surmount without proper optimization methodologies. For those rare and hard to solve problems, we offer specialized software developments.</p>
+                
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <div class="service-section">
+              <div class="service-content">
+                <h2>Technical Training</h2>
+                
+                <p>We are committed to placing strategy in the center stage of mine planning. As part of this effort, we offer in-depth technical training in strategic mine planning for open pit mines, with a strong focus on building a robust foundation in fundamental and advanced theoretical concepts. </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <div style="height: 500px;"></div>
     </div>
-  </header>
+  </div>
 
   <!--Dummy section-->
-  <div style="height: 1000px;"></div>
+  <!--<div style="height: 1000px;"></div>-->
 
   <!-- Footer -->
   <footer>
@@ -116,6 +165,10 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/skrollr.min.js"></script>
   <script src="js/jquery.nicescroll.min.js"></script>
+
+  <script src="js/i18next-1.7.4.min.js"></script>
+  <script src="js/translation.js"></script>
+
   <script src="js/deepmine-min.js"></script>
 
 </body>

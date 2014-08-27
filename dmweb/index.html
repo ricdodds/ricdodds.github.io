@@ -47,7 +47,7 @@
 
   <!-- Navigation -->
   <nav class="navbar navbar-main navbar-inverse navbar-static-top" role="navigation">
-    <div class="container">
+    <div class="container" style="position:relative">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <a class="navbar-brand" href="#page-top">
@@ -61,11 +61,10 @@
         </button>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
-
       <div class="collapse navbar-collapse navbar-left navbar-main-collapse">
         <ul class="nav navbar-nav">
           <li>
-            <a class="page-scroll-main" href="index.html#affixed-navbar" data-i18n="main_menu.deepmine"></a>
+            <a class="page-scroll-main" href="index.html" data-i18n="main_menu.deepmine" style="color: #d3d3d3"></a>
           </li>
           <li>
             <a href="services.html" data-i18n="main_menu.services"></a>
@@ -83,8 +82,14 @@
       </div>
 
       <div class="language-selector">
-        <a class="english-switch" href="#">en</a>
-        <a class="spanish-switch" href="#">sp</a>
+        <ul>
+          <li class="english-switch">
+            <a class="english-switch-text">en</a>
+          </li>
+          <li class="spanish-switch">
+            <a class="spanish-switch-text">sp</a>
+          </li>
+        </ul>
       </div>
 
       <!-- /.navbar-collapse -->
@@ -96,10 +101,11 @@
   <header class="image-bg-fixed-height" data-0="background-position-y:0px" data-500="background-position-y: 150px;">
     <!--<img class="img-responsive img-center" src="images/DeepmineSunrise.png" alt="">-->
     <div class="container">
+
       <div class="headline">
         <div class="headline-container">
 
-          <h1 data-i18n="headline"></h1>
+          <h1 data-i18n="[html]headline"></h1>
           <!--<button type="button" class="btn btn-info" data-i18n="headline_video"></button>-->
 
         </div>
@@ -265,7 +271,7 @@
               <p data-i18n="dynamic_section.p2"></p>
             </div>
           </div>
-          <!--<div class="col-sm-3">
+          <div class="col-sm-3">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 310" height="280" width="280" style="margin:0 auto; display:block  ">
               <line x1="160" y1="16" x2="130" y2="61" stroke="#333333" stroke-width="1" data--125-bottom="@x2:160;@y2:16" data--190-bottom="@x2:130;@y2:61" />
               <line x1="130" y1="61" x2="100" y2="106" stroke="#333333" stroke-width="1" data--125-bottom="@x2:130;@y2:61" data--190-bottom="@x2:100;@y2:106" />
@@ -327,7 +333,7 @@
               <circle cx="115" cy="286" r="15" stroke="#48A1BF" fill="#00B3BA" stroke-width="0" data--400-bottom="@r:0;" data--430-bottom="@r:15;" />
 
             </svg>
-          </div>-->
+          </div>
         </div>
       </div>
     </div>
@@ -370,9 +376,11 @@
         <div class="row">
           <div class="col-xs-4"> </div>
           <div class="col-xs-4">
-            
+
             <div class="holistic-block mine-plan" data-620-top="background-color: rgba(0, 0, 0, 1);border-color: rgba(40, 40, 40, 1); border-width:1px" data-580-top="background-color: rgba(100, 100, 100, 1); border-color: rgba(255, 255, 255, 1);border-width:5px" data-520-top="background-color: rgba(0, 0, 0, 1);border-color: rgba(81, 110, 117, 1);border-width:3px">
-              <h2 data-340-top="color: rgba(0, 0, 0, 1)" data-300-top="color: rgba(255, 255, 255, 1)" data-i18n="holistic_section.mine_plan"></h2>
+              <div>
+                <h2 data-340-top="color: rgba(0, 0, 0, 1)" data-300-top="color: rgba(255, 255, 255, 1)" data-i18n="[html]holistic_section.mine_plan"></h2>
+              </div>
             </div>
           </div>
           <div class="col-xs-4"> </div>
@@ -390,49 +398,48 @@
           </div>
           <div class="col-xs-4"> </div>
           <div class="col-xs-4">
-            
-              <div class="holistic-block economic-environment" data-900-top="border-color: rgba(154, 180, 143, 0); top: 0px; right: 0px; border-width:1px" data-580-top="border-color: rgba(154, 180, 143, 1); border-width:5px">
-                <!--<h2>Economic Conditions</h2>-->
-            
-                <p>
-                  <strong data-i18n="holistic_section.economic_header"></strong>
-                </p>
-                <p data-i18n="holistic_section.economic_text"></p>
-              </div>
+
+            <div class="holistic-block economic-environment" data-900-top="border-color: rgba(154, 180, 143, 0); top: 0px; right: 0px; border-width:1px" data-580-top="border-color: rgba(154, 180, 143, 1); border-width:5px">
+              <!--<h2>Economic Conditions</h2>-->
+
+              <p>
+                <strong data-i18n="holistic_section.economic_header"></strong>
+              </p>
+              <p data-i18n="holistic_section.economic_text"></p>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!--Pragmatic section-->
-    <div class="pragmatic-section" id="pragmatic-section">
-      <div class="content-section" style="padding-bottom: 0px">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-              <div class="inverted-content">
-                <h2 data-i18n="pragmatic_section.headline"></h2>
-                <p data-i18n="pragmatic_section.p1"></p>
-                <p data-i18n="pragmatic_section.p2"></p>
-              </div>
+  <!--Pragmatic section-->
+  <div class="pragmatic-section" id="pragmatic-section">
+    <div class="content-section" style="padding-bottom: 0px">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="inverted-content">
+              <h2 data-i18n="pragmatic_section.headline"></h2>
+              <p data-i18n="pragmatic_section.p1"></p>
+              <p data-i18n="pragmatic_section.p2"></p>
             </div>
           </div>
         </div>
       </div>
-      <div class="phase-gif frame-01">
-        <div class="phase-gif frame-02" data-360-center-center="opacity: 0;" data-340-center-center="opacity: 1;">
-          <div class="phase-gif frame-03" data-320-center-center="opacity: 0;" data-300-center-center="opacity: 1;">
-            <div class="phase-gif frame-04" data-280-center-center="opacity: 0;" data-260-center-center="opacity: 1;">
-              <div class="phase-gif frame-05" data-240-center-center="opacity: 0;" data-220-center-center="opacity: 1;">
-                <div class="phase-gif frame-06" data-200-center-center="opacity: 0;" data-180-center-center="opacity: 1;">
-                  <div class="phase-gif frame-07" data-160-center-center="opacity: 0;" data-140-center-center="opacity: 1;">
-                    <div class="phase-gif frame-08" data-120-center-center="opacity: 0;" data-100-center-center="opacity: 1;">
-                      <div class="phase-gif frame-09" data-80-center-center="opacity: 0;" data-60-center-center="opacity: 1;">
-                        <div class="phase-gif frame-10" data-40-center-center="opacity: 0;" data-20-center-center="opacity: 1;">
-                          <div class="phase-gif frame-11" data-0-center-center="opacity: 0;" data--20-center-center="opacity: 1;">
+    </div>
+    <div class="phase-gif frame-01">
+      <div class="phase-gif frame-02" data-360-center-center="opacity: 0;" data-340-center-center="opacity: 1;">
+        <div class="phase-gif frame-03" data-320-center-center="opacity: 0;" data-300-center-center="opacity: 1;">
+          <div class="phase-gif frame-04" data-280-center-center="opacity: 0;" data-260-center-center="opacity: 1;">
+            <div class="phase-gif frame-05" data-240-center-center="opacity: 0;" data-220-center-center="opacity: 1;">
+              <div class="phase-gif frame-06" data-200-center-center="opacity: 0;" data-180-center-center="opacity: 1;">
+                <div class="phase-gif frame-07" data-160-center-center="opacity: 0;" data-140-center-center="opacity: 1;">
+                  <div class="phase-gif frame-08" data-120-center-center="opacity: 0;" data-100-center-center="opacity: 1;">
+                    <div class="phase-gif frame-09" data-80-center-center="opacity: 0;" data-60-center-center="opacity: 1;">
+                      <div class="phase-gif frame-10" data-40-center-center="opacity: 0;" data-20-center-center="opacity: 1;">
+                        <div class="phase-gif frame-11" data-0-center-center="opacity: 0;" data--20-center-center="opacity: 1;">
 
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -444,77 +451,132 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <!--Insightful section-->
-    <div class="insightful-section" id="insightful-section">
+  <!--Insightful section-->
+  <div class="insightful-section" id="insightful-section">
 
-      <div class="content-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-              <div class="standard-content">
-                <h2 data-i18n="insightful_section.headline"></h2>
-                <p data-i18n="insightful_section.p1"></p>
-                <p data-i18n="insightful_section.p2"></p>
-              </div>
+    <div class="content-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="standard-content">
+              <h2 data-i18n="insightful_section.headline"></h2>
+              <p data-i18n="insightful_section.p1"></p>
+              <p data-i18n="insightful_section.p2"></p>
             </div>
           </div>
-          <div>
-            <iframe src="//fast.wistia.net/embed/iframe/s849wuwv27?videoFoam%5BmaxHeight%5D=360&videoFoam%5BminHeight%5D=100" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="360"></iframe>
-            <script src="//fast.wistia.net/assets/external/iframe-api-v1.js"></script>
+        </div>
+        <div>
+          <iframe src="http://fast.wistia.net/embed/iframe/ktx7waczeh?videoFoam%5BmaxHeight%5D=360&videoFoam%5BminHeight%5D=100" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="480"></iframe>
+          <script src="http://fast.wistia.net/assets/external/iframe-api-v1.js"></script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Stochastic section-->
+  <div class="stochastic-section" id="stochastic-section" data-300-center-bottom="background-color:rgb(0,0,0)" data-300-top-bottom="background-color:rgb(237,237,237)">
+    <div class="content-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="standard-content">
+              <h2 data-i18n="stochastic_section.headline"></h2>
+              <p data-i18n="stochastic_section.p1"></p>
+              <p data-i18n="stochastic_section.p2"></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <img class="video-image" src="images/VideoThumb.png" data-toggle="modal" data-target=".bs-modal" id="play-it" style="width:100%" />
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="modal fade bs-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="video-modal">
 
-    <!--Stochastic section-->
-    <div class="stochastic-section" id="stochastic-section">
-      <div class="content-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-              <div class="standard-content">
-                <h2 data-i18n="stochastic_section.headline"></h2>
-                <p data-i18n="stochastic_section.p1"></p>
-                <p data-i18n="stochastic_section.p2"></p>
+    <div class="modal-content">
+      <iframe id="yt-id" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!--Dummy section-->
+  <div class="last-section"></div>
+  <div class="learn-more-section">
+    <div class="content-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="inverted-content">
+              <h2>Want to know more?</h2>
+              <p>In the process of creating DeepMine, we have been pushing the boundaries of what is possible in strategic mine planning software, and we have been sharing our research with the mining community, in conferences around the world.</p>
+              <p>If you wan't to learn more about how DeepMine, and how its engine works, make sure to read our latest publications.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="publication-section">
+              <div class="publication-content">
+                <h2>MINE PLANNING 2013</h2>
+                <p class="conference-location">Santiago, Chile</p>
+                <h3>Flexible stochastic planning: the ultimate frontier</h3>
+                <p>This paper introduces the concepts related to stochastic mine planning, using Real Options to create flexible mine plans, and how DeepMine can support the decision making process.</p>
+                <a href="papers/mineplanning2013.pdf">see pdf</a>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-              <img class="video-image" src="images/VideoThumb.png" data-toggle="modal" data-target=".bs-modal" id="play-it" style="width:100%" />
+          <div class="col-md-4">
+            <div class="publication-section">
+              <div class="publication-content">
+                <h2>APCOM 2013</h2>
+                <p class="conference-location">Porto Alegre, Brazil</p>
+                <h3>Open Pit Strategic Mine Planning Under Uncertainty</h3>
+                <p>This paper explains the basics of mine plan generation in DeepMine, describing its main Approximate Dynamic Programming algorithm.</p>
+                <a href="papers/apcom2013.pdf">see pdf</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="publication-section">
+              <div class="publication-content">
+                <h2>SMP 2014</h2>
+                <p class="conference-location">Perth, Australia</p>
+                <h3>Open Pit Strategic Mine Planning With Automatic Phase Generation</h3>
+                <p>This paper will describe the basics of the major innovation introduced with DeepMine 2.0: the process of automatically deriving raw phases as the mine plan is generated.</p>
+                <a href="" style="pointer-events: none">coming soon</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="modal fade bs-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="video-modal">
-
-      <div class="modal-content">
-        <iframe id="yt-id" frameborder="0" allowfullscreen></iframe>
-      </div>
+    
+  </div>
+  <!-- Footer -->
+  <footer>
+    <div class="container text-center">
+      <p>Copyright &copy; BOAMine SpA 2014. Phone: +56 2 2225 3021 - Email: contact@boamine.com</p>
     </div>
+  </footer>
 
-    <!--Dummy section-->
-    <div class="last-section" style="height: 1000px;"></div>
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
 
-    <!-- Footer -->
-    <footer>
-      <div class="container text-center">
-        <p>Copyright &copy; BOAMine SpA 2014. Phone: +56 2 2225 3021 - Email: contact@boamine.com</p>
-      </div>
-    </footer>
 
-    <script src="js/jquery-2.1.1.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/skrollr.min.js"></script>
+  <script src="js/jquery.nicescroll.min.js"></script>
 
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/skrollr.min.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
-    <script src="js/deepmine.js"></script>
+  <script src="js/i18next-1.7.4.min.js"></script>
+  <script src="js/translation.js"></script>
 
-    <script src="js/i18next-1.7.4.min.js"></script>
-    <script src="js/translation.js"></script>
+  <script src="js/deepmine.js"></script>
+
+
 
 
 </body>
