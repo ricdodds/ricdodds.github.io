@@ -46,7 +46,7 @@ body {
 }
 
 line {
-	stroke: #FFF;
+	stroke: rgba(200, 200, 200, 0.3);
 	stroke-width: 1.5px;
 	stroke-linecap: round;
 }
