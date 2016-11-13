@@ -1,33 +1,40 @@
 <!doctype html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Mamihlapinatapai</title>
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
-    <script src="TemplateData/UnityProgress.js"></script>
-  </head>
-  <body class="template">
-    <p class="header"><span>Unity WebGL Player | </span>mamihlapinatapai</p>
-    <div class="template-wrap clear">
-      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="100%" width="100%"></canvas>
-      <br>
-      <div class="title">mamihlapinatapai</div>
-    </div>
-    <p class="footer">&laquo; created with <a href="http://unity3d.com/" title="Go to unity3d.com">Unity</a> &raquo;</p>
-    <script type='text/javascript'>
-  var Module = {
-    TOTAL_MEMORY: 268435456,
-    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
-    compatibilitycheck: null,
-    dataUrl: "Release/mamihlapinatapai.data",
-    codeUrl: "Release/mamihlapinatapai.js",
-    memUrl: "Release/mamihlapinatapai.mem",
-    
-  };
-</script>
-<script src="Release/UnityLoader.js"></script>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Unity WebGL Player | mamihlapinatapai</title>
+	<style>
+	/* a style sheet needs to be present for cursor hiding and custom cursors to work. */
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+	<script type='text/javascript'>
+		var Module = {
+			TOTAL_MEMORY: 268435456,
+				errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+				compatibilitycheck: null,
+				dataUrl: "Release/web.data",
+				codeUrl: "Release/web.js",
+				memUrl: "Release/web.mem",
+			};
+	</script>
+	<script src="Release/UnityLoader.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("body").css("overflow","hidden");
+			$("canvas").attr("height", $(window).height());
+			$("canvas").attr("width", $(window).height()*1080/1920);
+		});
 
-  </body>
+		$(window).resize(function() {
+			$("body").css("overflow","hidden");
+			$("canvas").attr("height", $(window).height());
+			$("canvas").attr("width", $(window).height()*1080/1920);
+		});
+	</script>
+
+</body>
 </html>
